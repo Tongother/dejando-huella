@@ -1,8 +1,11 @@
 import Stat from "./stat/stat";
 const Stats = ()=>{
     return(
-        <section className="w-full h-[600px] py-[120px]">
-            <Stat/>            
+        <section className="flex flex-col w-full py-[50px] px-[50px] gap-9">
+            <Stat estadistica="12.200" desc="Perros rescatados en los últimos años."/>
+            <Stat estadistica="10.700" desc="Perros alimentados y atendidos actualmente."/>
+            <Stat estadistica="10.700" desc="Perros alimentados y atendidos actualmente."/>
+            <Stat estadistica="10.700" desc="Perros alimentados y atendidos actualmente."/>
         </section>
     )
 }

@@ -18,14 +18,9 @@ const config: Config = {
       serif: ["var(--font-serif)"],
       mono: ["var(--font-mono)"],
       rancho: ["Rancho"],
+      coda: ["Coda"],
+      com: ["Comfortaa"],
     },
-  },
-  fontFamily: {
-    sans: ["var(--font-sans)"],
-    serif: ["var(--font-serif)"],
-    mono: ["var(--font-mono)"],
-    rancho: ["Rancho"],
-    ram: ["Rammetto+One"],
   },
   plugins: [],
 };
