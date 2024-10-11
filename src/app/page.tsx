@@ -1,7 +1,8 @@
-
 import Info from "./components/info/info";
 import Banner from "./components/banner/Banner";
 import Stats from "./components/stats";
+import Footer from "./components/footer/Footer";
+
 export default function Home() {
   return (
     <>
@@ -9,6 +10,8 @@ export default function Home() {
       <Banner>
       </Banner>
       <Stats/>
+      <Footer>
+      </Footer>
     </>
   );
 }
