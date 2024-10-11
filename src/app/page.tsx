@@ -1,14 +1,13 @@
 
 import Info from "./components/info/info";
-import Banner2 from "./components/banner2/Banner2";
+import Banner from "./components/banner/Banner";
 export default function Home() {
   return (
     <>
       <Info>
-        
       </Info>
-      <Banner2>
-      </Banner2>
+      <Banner>
+      </Banner>
     </>
   );
 }
