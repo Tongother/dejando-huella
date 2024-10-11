@@ -1,11 +1,9 @@
-import Image from "next/image";
+
 const Info = ()=>{
 	return <section className="bg-slate-400 border-solid border-2 border-black">
 		<article className="flex flex-col border-solid border-2 border-black">
 			<div id="imagen" className="border-solid border-2 border-black">
-				<Image src={} alt="perrito" width={50} height={50}>
-
-				</Image>
+			
 			</div>
 			<div className="border-solid border-2 border-black">
 				<h1>¿Quienes pueden ser voluntarios?</h1>
