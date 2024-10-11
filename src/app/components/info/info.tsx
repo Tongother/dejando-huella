@@ -11,8 +11,8 @@ const Info = ()=>{
 				</div>
 			</div>
 			<div id="descripcion" className="h-[300px] w-full bg-[#6f7acf] text-[#ffff] lg:text-3xl lg:w-[520px] lg:p-0 flex flex-col justify-center px-8">
-				<h1 className="text-center text-xl mb-4"><strong>¿Quienes pueden ser voluntarios?</strong></h1>
-				<h2 className="text-center text-l">Todas las personas mayores de edad pueden asistir a las instalaciones para conocernos y ayudarnos a limpiar nuestras patitas.</h2>
+				<h1 className="text-center text-xl mb-4 font-ramme"><strong>¿Quienes pueden ser voluntarios?</strong></h1>
+				<h2 className="text-center text-l font-ramme">Todas las personas mayores de edad pueden asistir a las instalaciones para conocernos y ayudarnos a limpiar nuestras patitas.</h2>
 			</div>
 		</article>
 
