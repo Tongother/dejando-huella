@@ -20,6 +20,7 @@ const config: Config = {
       rancho: ["Rancho"],
       coda: ["Coda"],
       com: ["Comfortaa"],
+      ramme: ["Rammetto+One"],
     },
   },
   plugins: [],
