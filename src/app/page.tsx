@@ -1,12 +1,16 @@
-import Info from "./components/info/info";
+import Banner from "./components/banner/Banner";
+import Stats from "./components/stats";
+import Footer from "./components/footer/Footer";
+import Banner2 from "./components/banner2/Banner2";
 import Carrusel from "./components/carrusel/Carrusel";
 export default function Home() {
   return (
     <>
       <Carrusel/>
-      <Info>
-        
-      </Info>
+      <Banner/>
+      <Banner2/>
+      <Stats/>
+      <Footer/>
     </>
   );
 }

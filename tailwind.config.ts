@@ -13,6 +13,16 @@ const config: Config = {
         foreground: "var(--foreground)",
       },
     },
+    fontFamily: {
+      sans: ["var(--font-sans)"],
+      serif: ["var(--font-serif)"],
+      mono: ["var(--font-mono)"],
+      rancho: ["Rancho"],
+      coda: ["Coda"],
+      com: ["Comfortaa"],
+      nun: ["Nunito Sans"],
+      ramm: ["Rammetto One"],
+    },
   },
   plugins: [],
 };
