@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Ciclo de vida del projecto
 
-## Getting Started
-
-First, run the development server:
+<h3>Rama de trabajo</h3>
+Para que trabajemos de manera organizada, cada uno tendra que trabajar en su propia rama, de esta manera, cuando incorporemos cambios, no tengamos conflictos en el código. Para lograr ello, desde la rama master que se tiene que estar ubicada se realiza lo siguiente
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git checkout master
+```
+```bash
+git pull origin master
+```
+```bash
+git branch -M nombreDeSuRama
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+De esta manera, los cambios que hagan solamente se reflejara en su rama y no en cualquier otra, con ello, ya pueden iniciar su tarea.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+<h3>Incorporar cambios</h3>
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Cuando hayan terminado su tarea o algún cambio rapido, este sera la cronología para la inserción de su codigo al repositorio (En la terminal de su visual o gitbash, donde hacen npm run dev):
 
-## Learn More
+```bash
+git checkout suRama
+git add .
+git commit -m "06/10/2024 Add/Delete/Fix/Change: Breve mensaje de lo que hicieron"
+git checkout master
+git pull origin master
+git merge suRama
+```
+De esta manera, fusionaran su rama con la rama master, que es la rama en la que todos enviamos nuestros cambios. Puede que les aparescan conflictos, así que, los tienen que resolver, ya sea aceptando los cambios de algún compañero, aceptando sus cambios o aceptando ambos. Para realizar esto, se dirigen aquí
 
-To learn more about Next.js, take a look at the following resources:
+![13e150e5-95ee-47f7-b865-31e4ef657c68](https://github.com/user-attachments/assets/1ed81562-7b0a-4323-81ea-a309b54cb06d)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Resuelven los conflictos hasta que cada archivo esten guardados los cambios, limpios y sin conflictos. De esta manera, cuando hagan eso, pasen su mouse en el archivo y verifiquen que tenga una X y no un simbolo de palomear. Si lo tiene, denle click y ya cambiara.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Finalmente, cuando eso pase, le daran click en el bóton que dice SYNC
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+![cd2659fb-75c2-49ce-8d38-66a5513cc0f7](https://github.com/user-attachments/assets/ae3cd87a-e383-4428-ab3b-83ef078b880a)
