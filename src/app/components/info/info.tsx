@@ -6,7 +6,7 @@ const Info = ()=>{
 	return <section className="lg:py-[100px]">
 		<article className="flex flex-col lg:flex-row-reverse items-center justify-center lg:bg-[#6f7acf] lg:mb-[150px] lg:py-10">
 			<div id="imagen" className="flex justify-center py-5">
-				<div className="forma relative lg:ml-[80px]">
+				<div className="forma relative lg:ml-[120px]">
 					<Image src={chonapng.src} alt="perrito" fill/>
 				</div>
 			</div>
@@ -18,7 +18,7 @@ const Info = ()=>{
 
 		<article className="flex flex-col lg:flex-row items-center justify-center lg:bg-[#E88EEF] lg:py-10">
 			<div id="imagen" className="flex justify-center py-5">
-				<div className="forma2 relative lg:mr-[80px]">
+				<div className="forma2 relative lg:mr-[120px]">
 					<Image src={gerry.src} alt="perrito" fill/>
 				</div>
 			</div>

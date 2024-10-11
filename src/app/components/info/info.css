@@ -22,6 +22,10 @@
         width: 390px;
         height: 390px;
         background: #FFFFFF;
+        transition: transform 0.3s ease;
+    }
+    .forma:hover {
+        transform: scale(1.2);
     }
     .forma2{
         border-radius: 60% 40% 31% 69% / 55% 45% 55% 45%;
@@ -29,5 +33,9 @@
         height: 390px;
         background: #FFFFFF;
         overflow: hidden;
+        transition: transform 0.3s ease;
+    }
+    .forma2:hover{
+        transform: scale(1.2);
     }
 }
