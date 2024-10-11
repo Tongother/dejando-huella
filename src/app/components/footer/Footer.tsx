@@ -25,7 +25,7 @@ const Footer = () => {
                 <ul className="bd-[#000000] font-medium">
                   <li className="mb-4">
                     <Link
-                      href="https://flowbite.com/"
+                      href=""
                       className="hover:underline"
                     >
                       Fotos
@@ -33,7 +33,7 @@ const Footer = () => {
                   </li>
                   <li>
                     <Link
-                      href="https://tailwindcss.com/"
+                      href=""
                       className="hover:underline"
                     >
                       Rescatistas
@@ -48,19 +48,18 @@ const Footer = () => {
                 <ul className="bd-[#000000] font-medium">
                   <li className="mb-4">
                     <a
-                      href="https://github.com/themesberg/flowbite"
+                      href=""
                       className="hover:underline "
                     >
                       Facebook
                     </a>
                   </li>
                   <li>
-                    <a
-                      href="https://discord.gg/4eeurUVvTy"
+                    <Link href="https://discord.gg/4eeurUVvTy"
                       className="hover:underline"
                     >
                       Instagram
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -79,10 +78,10 @@ const Footer = () => {
             </div>
           </div>
           <hr className="my-6 border-dark-200 sm:mx-auto bd-[#000000] lg:my-8" />
-          <div className="sm:flex sm:items-center sm:justify-between">
+        <div className="relative sm:flex sm:items-center sm:justify-between  h-24">
             <span className="text-sm sm:text-center bd-[#000000]">
               © 2024{" "}
-              <a href="https://flowbite.com/" className="hover:underline">
+              <a href="" className="hover:underline">
                 Dejando Huella™
               </a>
               .Derechos reservados.
@@ -133,6 +132,10 @@ const Footer = () => {
                 className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
               >
               </a>
+            </div>
+            <div className="lg:absolute md:left-[50%] lg:left-[52.5%] xl:left-[66%] flex items-start mt-4 justify-evenly sm:mt-0 ">
+                    <Link href="#" className="bg-[#182271] text-white text-center no-underline font-bold text-sm md:text-xl lg:ml-8 rounded-[5px] p-[5px] md:p-[10px]">Iniciar sesión</Link>
+                    <Link href="#" className="bg-[#182271] text-white text-center no-underline font-bold text-sm md:text-xl ml-4 lg:ml-8 rounded-[5px] p-[5px] md:p-[10px]">Registrarse</Link> 
             </div>
           </div>
         </div>
