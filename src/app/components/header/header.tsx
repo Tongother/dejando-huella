@@ -37,7 +37,7 @@ export const Header = ({ componentHeight = 400 }: HeaderProps ) => {
                 
             }}
             transition={{ type: "tween", duration: 0.3 }}
-            className={`font-rancho text-[#374193] lg:text-xl w-full bg-white hidden md:flex justify-center z-20 fixed`}
+            className={`font-rancho text-[#374193] lg:text-xl w-full bg-white hidden md:flex justify-center z-40 fixed`}
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
         >
@@ -55,7 +55,7 @@ export const Header = ({ componentHeight = 400 }: HeaderProps ) => {
                         <Link href="/adopciones">Adopciones</Link>
                     </li>
                     <li className="mx-6">
-                        <Image src={logo.src} alt="Logo" width={80} height={80} />
+                        <Image src={logo.src} alt="Logo" width={80} height={80} priority/>
                     </li>
                     <li>
                         <Link href="/eventos">Eventos próximos</Link>

@@ -35,7 +35,7 @@ export const Navbar = () => {
         >
             <nav className="w-full flex justify-between items-center px-4 z-50">
                     <div className="flex items-center">
-                        <Image src={logo.src} alt="Logo" width={40} height={40} />
+                        <Image src={logo.src} alt="Logo" width={40} height={40} priority/>
                     </div>
                     <button onClick={() => setMenuOpen(!menuOpen)} className="focus:outline-none">
                         {menuOpen ? (
