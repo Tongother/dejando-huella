@@ -3,12 +3,8 @@
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
-import logo from "../../../../public/logo_sin_fondo.png";
+import logo from "../../../../public/logos/logo_morado_naranja.png";
 import Link from "next/link";
-
-type HeaderProps = {
-    componentHeight?: number;
-};
 
 export const Navbar = () => {
     const [opacity, setOpacity] = useState(true);
@@ -34,9 +30,9 @@ export const Navbar = () => {
             className={`md:hidden font-rancho text-[#374193] w-full bg-[#fefefe] flex px-2 justify-center z-20 sticky top-0`}
         >
             <nav className="w-full flex justify-between items-center px-4 z-50">
-                    <div className="flex items-center">
+                    <Link href={'/'} className="flex items-center">
                         <Image src={logo.src} alt="Logo" width={40} height={40} priority/>
-                    </div>
+                    </Link>
                     <button onClick={() => setMenuOpen(!menuOpen)} className="focus:outline-none">
                         {menuOpen ? (
                             // Icono de cerrar
