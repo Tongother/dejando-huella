@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import logo_sin_fondo from "../../../../public/logo.png";
+import logo_morado_naranja from "../../../../public/logos/logo_morado_naranja.png";
 
 const Footer = () => {
   return (
@@ -11,7 +11,7 @@ const Footer = () => {
           <div className="md:flex md:justify-between">
             <div className="mb-6 md:mb-0">
               <Link href="" className="flex items-center">
-                <Image src={logo_sin_fondo.src} alt="Logo" width={80} height={80}></Image>
+                <Image src={logo_morado_naranja.src} alt="Logo" width={80} height={80}></Image>
                 <span className="self-center text-2xl font-semibold whitespace-nowrap bd-[#000000]">
                   Dejando Huella
                 </span>
