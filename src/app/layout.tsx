@@ -30,7 +30,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <ResponsiveHeader />
-        <section className="pt-[40px] md:pt-[70px]">
+        <section>
           {children}
         </section>
       </body>

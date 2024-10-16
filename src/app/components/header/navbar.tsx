@@ -31,7 +31,7 @@ export const Navbar = () => {
                 backgroundColor: opacity ? "white" : "#fefefe",
             }}
             transition={{ type: "tween", duration: 0.3 }}
-            className={`md:hidden font-rancho text-[#374193] w-full bg-[#fefefe] flex px-2 justify-center z-20 sticky top-0`}
+            className={`md:hidden font-rancho text-[#374193] w-full bg-[#fefefe] flex px-2 justify-center z-40 sticky top-0`}
         >
             <nav className="w-full flex justify-between items-center px-4 z-50">
                     <div className="flex items-center">

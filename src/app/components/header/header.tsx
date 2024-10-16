@@ -29,7 +29,8 @@ export const Header = ({ componentHeight = 400 }: HeaderProps ) => {
     });
 
     return (
-        <motion.header
+        <>
+            <motion.header
             initial={{ y: 0 }}
             animate={{
                 y: show ? 0 : "-100%",
@@ -37,10 +38,10 @@ export const Header = ({ componentHeight = 400 }: HeaderProps ) => {
                 
             }}
             transition={{ type: "tween", duration: 0.3 }}
-            className={`font-rancho text-[#374193] lg:text-xl w-full bg-white hidden md:flex justify-center z-40 fixed`}
+            className={`font-rancho text-[#374193] lg:text-xl w-full bg-white hidden md:flex justify-center z-40 sticky top-0`}
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
-        >
+            >
             <nav className="w-full">
                 <ul className="flex justify-between items-center space-x-6 px-12">
                     <li></li>
@@ -70,7 +71,8 @@ export const Header = ({ componentHeight = 400 }: HeaderProps ) => {
                     <button className="bg-[#374193] text-white px-4 py-2 rounded-3xl w-32">Ingresar</button>
                 </ul>
             </nav>
-        </motion.header>
+            </motion.header>
+        </>
     );
 };
 

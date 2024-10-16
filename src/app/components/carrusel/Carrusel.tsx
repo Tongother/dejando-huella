@@ -9,19 +9,68 @@ import arrow from "@/../public/arrow.png";
 const Carrusel: React.FC = () => {
   const images: string[] = [img1.src, img1.src, img2.src];
   const [tiempoScrollTouch, setTiempoScrollTouch] = useState<NodeJS.Timeout>();
-  const [tiempoCarrusel, setTiempoCarrusel] = useState<NodeJS.Timeout>();
+  const intervalRef = useRef<NodeJS.Timeout>();
   const [scrollPos, setScrollPos] = useState(0);
+  const [isTouching, setIsTouching] = useState(false);
   const carruselRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const carruselMoviendose = () => setScrollPos(s=> s + 1);
-    setTiempoCarrusel(setInterval(carruselMoviendose, 4000));
-    return () => clearInterval(tiempoCarrusel);
-  },[tiempoCarrusel]);
+    const interval = setInterval(() =>{
+      setScrollPos((prev) => prev + 1);
+    },4000);
+
+    intervalRef.current = interval
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const carrusel = carruselRef.current;
+    if(scrollPos > images.length - 1) return setScrollPos(0);
+    if (carrusel) {
+      const width = carrusel.offsetWidth;
+      carrusel.scrollTo({
+        left: scrollPos * width,
+        behavior: "smooth",
+      });
+    }
+  }, [scrollPos, images.length]);
+
+  const reiniciarIntervalo = () => {
+    const interval = setInterval(() =>{
+      setScrollPos((prev) => prev + 1);
+    },4000);
+  
+    intervalRef.current = interval
+  }
 
   const handleTouchEnd = () => {
+    setIsTouching(false);
+    if(tiempoScrollTouch){
+      clearTimeout(tiempoScrollTouch);
+    }
+    setTiempoScrollTouch(setTimeout(() => {
+      const carrusel = carruselRef.current;
+      
+      if (carrusel) {
+          const scrollPosition = carrusel.scrollLeft;
+          const width = carrusel.offsetWidth;       
+
+          const imageIndex = Math.round(scrollPosition / width);
+          
+          carrusel.scrollTo({
+          left: imageIndex * width,
+          behavior: "smooth",
+          });
+      }
+    }, 50));
+
+    reiniciarIntervalo();
+  }
+
+  const handleOnScroll = () => {
     const isTablet = window.innerWidth < 1024;
-    if(isTablet){
+    if(isTablet && !isTouching){
       if(tiempoScrollTouch){
           clearTimeout(tiempoScrollTouch);
       }
@@ -34,38 +83,33 @@ const Carrusel: React.FC = () => {
               const width = carrusel.offsetWidth;       
 
               const imageIndex = Math.round(scrollPosition / width);
-              
+
               carrusel.scrollTo({
               left: imageIndex * width,
               behavior: "smooth",
               });
+
+              setScrollPos(imageIndex);
           }
       }, 50));
     }
+
   };
-  
-  useEffect(() => {
-    const carrusel = carruselRef.current;
-    const width = carrusel?.offsetWidth;
-
-    if(carrusel){
-      carrusel.scrollTo({
-        left: width ? scrollPos * width : 0,
-        behavior: "smooth"
-      })
-    }
-
-    if(scrollPos === images.length) setScrollPos(0);
-  }, [scrollPos, images]);
 
   const handleMoveCarrusel = (direction: "left" | "right") => {
-    if (direction === "left" && scrollPos === 0) {
-      return setScrollPos(images.length - 1)
+    if (direction === "left" && scrollPos === 0){ 
+      if(intervalRef.current) clearInterval(intervalRef.current);
+      reiniciarIntervalo();
+      return setScrollPos(images.length - 1);  
     }
-    if (direction === "right" && scrollPos === images.length - 1) {
-      return setScrollPos(0)
+    if (direction === "right" && scrollPos === images.length - 1) { 
+      if(intervalRef.current) clearInterval(intervalRef.current);
+      reiniciarIntervalo();
+      return setScrollPos(0);
     }
+    if(intervalRef.current) clearInterval(intervalRef.current);
     setScrollPos(s => s + (direction === "left" ? -1 : 1));
+    reiniciarIntervalo();
   };
 
   return (
@@ -90,7 +134,13 @@ const Carrusel: React.FC = () => {
         ref={carruselRef}
         className="relative flex overflow-auto w-full h-60 md:h-[400px] lg:h-[600px] xl:h-[700px] font-rancho"
         style={{ scrollbarWidth: "none" }}
-        onScroll={handleTouchEnd}
+        onTouchStart={() => {setIsTouching(true);
+          if(intervalRef.current){
+            clearInterval(intervalRef.current);
+          }
+        }}
+        onTouchEnd={handleTouchEnd}
+        onScroll={handleOnScroll}
       >
         {images.map((imgSrc, index) => (
           <div key={index} className="relative md:flex md:justify-end min-w-full h-auto overflow-visible">
