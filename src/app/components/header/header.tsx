@@ -37,12 +37,12 @@ export const Header = ({ componentHeight = 400 }: HeaderProps) => {
 
             }}
             transition={{ type: "tween", duration: 0.3 }}
-            className={`font-rancho text-[#374193] lg:text-xl w-full bg-white hidden md:flex justify-center z-40 fixed`}
+            className={`font-rancho text-[#374193] lg:text-xl w-full bg-white hidden md:flex justify-center z-50 fixed`}
             onMouseEnter={() => setIsHover(true)}
             onMouseLeave={() => setIsHover(false)}
         >
-            <nav className="w-full">
-                <ul className="flex justify-between items-center space-x-6 px-12">
+            <nav className="w-full z-50">
+                <ul className="flex justify-between items-center space-x-6 px-12 z-50">
                     <li></li>
                     <li></li>
                     <li>

@@ -3,8 +3,8 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import img1 from "@/../public/breadcrumb_1.png";
-import img2 from "@/../public/nombreBandita.png";
-import arrow from "@/../public/arrow.png";
+import img2 from "@/../public/perritos/nombreBandita.png";
+import arrow from "@/../public/icons/arrow.png";
 
 const Carrusel: React.FC = () => {
   const images: string[] = [img1.src, img1.src, img2.src];

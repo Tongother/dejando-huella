@@ -1,5 +1,6 @@
 import FondoIconos from "../components/items/banner";
 import BotonSeleccion from "../components/adopciones/seleccion";
+import HogarTemporal from "../components/adopciones/hogar_temporal";
 import La_chona from "../../../public/perritos/La_chona.png";
 import Minnie from "../../../public/gatitos/Minnie.png";
 
@@ -23,6 +24,8 @@ export default function Adopciones() {
           
           </div>
         </FondoIconos>
+
+        <HogarTemporal />
       </div>
     </>
   );
