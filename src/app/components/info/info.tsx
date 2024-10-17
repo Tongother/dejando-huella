@@ -3,8 +3,8 @@ import "./info.css"
 import La_chona from "../../../../public/perritos/La_chona.png";
 import gerry from "../../../../public/perritos/gerry.png";
 const Info = ()=>{
-	return <section className="lg:py-[100px]">
-		<article className="contenedor flex flex-col lg:flex-row-reverse items-center justify-center lg:bg-[#6f7acf] lg:mb-[150px] lg:py-10">
+	return <section className="bg-white">
+		<article className="container flex flex-col lg:flex-row-reverse items-center justify-center lg:bg-[#6f7acf] lg:py-10">
 			<div id="imagen" className="flex justify-center py-5">
 				<div className="forma relative lg:ml-[120px]">
 					<Image className="sombra" src={La_chona.src} alt="perrito" fill/>
