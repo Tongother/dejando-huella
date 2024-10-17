@@ -1,3 +1,4 @@
+import { ruby } from "framer-motion/client";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -24,6 +25,7 @@ const config: Config = {
         irish: ["Irish Grover"],
         inria: ["Inria Serif"],
         itim: ["Itim"],
+        ruby: ["Rubik"]
       },
       backgroundImage: {
         'adopciones': "url('/fondoAdopcion.png')",
