@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import ResponsiveHeader from "./components/header";
+import Footer from "./components/footer/Footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -15,8 +16,8 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Página de inicio",
-  description: "Página de aterrizaje del proyecto Dejando Huella",
+  title: "Dejando Huella",
+  description: "Dejando Huella es una organización sin fines de lucro que busca ayudar a erradicar el problema de perros y gatos en situación de calle en el estado de Chiapas, México.",
 };
 
 export default function RootLayout({
@@ -33,6 +34,7 @@ export default function RootLayout({
         <section>
           {children}
         </section>
+        <Footer/>
       </body>
     </html>
   );

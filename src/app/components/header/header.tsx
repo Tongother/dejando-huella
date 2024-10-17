@@ -4,13 +4,13 @@ import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import logo from "../../../../public/logo_sin_fondo.png";
+import logo from "../../../../public/logos/logo_morado_naranja.png";
 
 type HeaderProps = {
     componentHeight?: number;
 };
 
-export const Header = ({ componentHeight = 400 }: HeaderProps ) => {
+export const Header = ({ componentHeight = 400 }: HeaderProps) => {
     const [show, setShow] = useState(true);
     const { scrollY } = useScroll();
     const [isInitial, setIsInitial] = useState(true);
@@ -21,7 +21,7 @@ export const Header = ({ componentHeight = 400 }: HeaderProps ) => {
             setShow(false);
             setIsInitial(false);
         } else if (latest > componentHeight) {
-            setShow(true); 
+            setShow(true);
         } else if (latest < componentHeight) {
             setShow(true);
             setIsInitial(true);
@@ -35,7 +35,7 @@ export const Header = ({ componentHeight = 400 }: HeaderProps ) => {
             animate={{
                 y: show ? 0 : "-100%",
                 opacity: !isInitial && !isHover ? 0.8 : 1,
-                
+
             }}
             transition={{ type: "tween", duration: 0.3 }}
             className={`font-rancho text-[#374193] lg:text-xl w-full bg-white hidden md:flex justify-center z-40 sticky top-0`}
@@ -56,7 +56,9 @@ export const Header = ({ componentHeight = 400 }: HeaderProps ) => {
                         <Link href="/adopciones">Adopciones</Link>
                     </li>
                     <li className="mx-6">
-                        <Image src={logo.src} alt="Logo" width={80} height={80} priority/>
+                        <Link href="/">
+                            <Image src={logo.src} alt="Logo" width={80} height={80} />
+                        </Link>
                     </li>
                     <li>
                         <Link href="/eventos">Eventos próximos</Link>
