@@ -1,23 +1,16 @@
 import React from 'react';
 import Link from 'next/link';
+import "./Banner2.css";
 
 const Banner2 = () => {
   return (
     <>
-        <section className="hidden lg:flex flex-col lg:flex-row justify-evenly lg:justify-around  items-center bg-[#0099FF]  rounded-none text-white w-full h-[300px] lg:h-[150px] box-border">
-            <Link href="#" className="bg-[#FFB602] text-white text-center no-underline font-bold text-xl lg:ml-8 rounded-[40px] p-[25px]">Contactanos</Link>
-            <div className="flex flex-col gap-2 text-3xl font-bold items-center">
+        <section className="hidden lg:flex flex-col lg:flex-row justify-evenly items-center bg-[#0099FF] rounded-none text-white w-full h-[300px] lg:h-[150px] box-border lg:justify-center lg:gap-20">
+            <Link href="#" className="btnHover bg-[#FFB602] text-white lg:w-[250px] text-center no-underline font-bold text-xl rounded-[40px] p-[25px] font-ruby">Contáctanos</Link>
+            <div className="flex flex-col gap-2 text-4xl font-normal font-ramm">
                 <h1 className='text-center'>¿Quieres más información?</h1>
-                <p className='text-lg text-center'><a className='text-white font-bold underline' href="#">¡Comunícate con nosotros!</a></p>
+                <p className='text-lg'><a className='text-white underline' href="#">¡Comunícate con nosotros!</a></p>
             </div>
-        </section>
-
-        <section className="flex lg:hidden flex-col lg:flex-row justify-evenly lg:justify-around  items-center bg-[#0099FF]  rounded-none text-white w-full h-[300px] lg:h-[150px] box-border">
-            <div className="flex flex-col gap-2 text-3xl font-bold items-center">
-                <h1 className='text-center'>¿Quieres más información?</h1>
-                <p className='text-lg text-center'><a className='text-white font-bold underline' href="#">¡Comunícate con nosotros!</a></p>
-            </div>
-            <Link href="#" className="bg-[#FFB602] text-white text-center no-underline font-bold text-xl lg:ml-8 rounded-[40px] p-[25px]">Contactanos</Link>
         </section>
     </>
   );

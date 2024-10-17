@@ -14,8 +14,8 @@ export default function Home() {
       <Carrusel></Carrusel>
       <Banner/>
       <Info></Info>
-      <Banner2/>
       <Stats/>
+      <Banner2/>
     </>
   );
 }
