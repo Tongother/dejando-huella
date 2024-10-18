@@ -24,7 +24,6 @@ export default function Adopciones() {
           
           </div>
         </FondoIconos>
-
         <HogarTemporal />
       </div>
     </>
