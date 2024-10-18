@@ -12,17 +12,17 @@ const Footer = () => {
             <div className="mb-6 md:mb-0">
               <Link href="" className="flex items-center">
                 <Image src={logo_morado_naranja.src} alt="Logo" width={80} height={80} className="w-auto h-auto" priority/>
-                <span className="self-center text-2xl font-semibold whitespace-nowrap bd-[#000000]">
+                <span className="self-center text-2xl font-semibold whitespace-nowrap bd-[#000000] font-itim ml-5 text-[#fcfcfc]">
                   Dejando Huella
                 </span>
               </Link>
             </div>
             <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
               <div>
-                <h2 className="mb-6 text-sm font-semibold bd-[#000000] uppercase ">
+                <h2 className="mb-6 text-sm font-semibold bd-[#000000] uppercase text-[#fcfcfc] font-inria">
                   Comunidad
                 </h2>
-                <ul className="bd-[#000000] font-medium">
+                <ul className="bd-[#000000] font-medium text-[#fcfcfc] font-inria">
                   <li className="mb-4">
                     <Link
                       href=""
@@ -42,20 +42,20 @@ const Footer = () => {
                 </ul>
               </div>
               <div>
-                <h2 className="mb-6 text-sm font-semibold uppercase bd-[#000000]">
+                <h2 className="mb-6 text-sm font-semibold uppercase bd-[#000000] text-[#fcfcfc] font-inria">
                   Siguenos
                 </h2>
-                <ul className="bd-[#000000] font-medium">
+                <ul className="bd-[#000000] font-medium text-[#fcfcfc] font-inria">
                   <li className="mb-4">
                     <a
-                      href=""
+                      href="https://www.facebook.com/proyectodejandohuellamx"
                       className="hover:underline "
                     >
                       Facebook
                     </a>
                   </li>
                   <li>
-                    <Link href="https://discord.gg/4eeurUVvTy"
+                    <Link href="https://www.instagram.com/proyectodejandohuella/"
                       className="hover:underline"
                     >
                       Instagram
@@ -64,10 +64,10 @@ const Footer = () => {
                 </ul>
               </div>
               <div>
-                <h2 className="mb-6 text-sm font-semibold uppercase bd-[#000000]">
+                <h2 className="mb-6 text-sm font-semibold uppercase bd-[#000000] text-[#fcfcfc] font-inria">
                   Sobre nosotros
                 </h2>
-                <ul className="bd-[#000000] font-medium">
+                <ul className="bd-[#000000] font-medium text-[#fcfcfc] font-inria">
                   <li className="mb-4">
                     <a href="#" className="hover:underline">
                       Acerca de
