@@ -6,6 +6,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Itim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -22,4 +23,8 @@
 @keyframes show {
     from { opacity: 0; scale: 50%; }
     to { opacity: 1; scale: 100%; }
+}
+
+.sombra{
+    filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, .8));
 }

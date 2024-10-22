@@ -16,6 +16,7 @@ export default function Home() {
       <Info/>
       <Banner2/>
       <Stats/>
+      <Banner2/>
     </>
   );
 }
