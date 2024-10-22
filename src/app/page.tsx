@@ -11,9 +11,9 @@ export default function Home() {
       <div className="fixed w-full h-full -z-10">
         <Image src={"/fondo_fijo.jpg"} fill alt="Un perro bien sarnoso" className="object-cover object-[70%] lg:object-[50%]"></Image>
       </div>
-      <Carrusel></Carrusel>
+      <Carrusel/>
       <Banner/>
-      <Info></Info>
+      <Info/>
       <Banner2/>
       <Stats/>
     </>

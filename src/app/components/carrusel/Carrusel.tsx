@@ -1,7 +1,12 @@
 "use client"
+// Importaciones de React y Next
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+
+// Importaciones de Framer Motion
 import { motion } from "framer-motion";
+
+// Importaciones de imágenes
 import img1 from "@/../public/breadcrumb_1.png";
 import img2 from "@/../public/perritos/nombreBandita.png";
 import arrow from "@/../public/icons/arrow.png";

@@ -3,17 +3,21 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 interface ElementoPerritoProps{
-    cantidad: number,
+    cantidad?: number,
 }
 
 const ElementoPerrito = ({cantidad}:ElementoPerritoProps) =>{
 
-    const [cantidadState, setCantidadState] = useState(0);
+    const [cantidadState, setCantidadState] = useState<number>(0);
 
     useEffect(() => {
-        if(window.innerWidth <= 768) setCantidadState(6);
-        else if(window.innerWidth > 768 && window.innerWidth < 1440) setCantidadState(8);
-        else setCantidadState(cantidad);
+        if (cantidad) {
+            setCantidadState(cantidad);
+        }else{
+            if(window.innerWidth <= 768) setCantidadState(6);
+            else if(window.innerWidth > 768 && window.innerWidth < 1440) setCantidadState(8);
+            else if(window.innerWidth >= 1440) setCantidadState(12);
+        }
     }, [])
 
     return(
