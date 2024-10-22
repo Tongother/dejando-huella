@@ -36,7 +36,7 @@ const Formulario = () => {
                 <input type="url" placeholder="Cuenta de Facebook (url)" className="p-2 border border-gray-300 rounded-lg bg-white text-black placeholder-gray-500 shadow-[0_4px_2px_-2px_rgba(0,0,0,0.5)] focus:outline-none focus:ring-2 focus:ring-blue-500" />
             </div>
             <div className="form-group flex flex-col col-span-2 mb-4">
-                <label className="text-black text-sm mb-1 text-center">Elige el área de tu preferencia</label>
+                <label className="text-black text-sm mb-1 text-sm">Elige el área de tu preferencia</label>
                 <select id="opciones" name="opciones" className="p-2 border border-gray-300 rounded-lg bg-white text-black placeholder-gray-500 shadow-[0_4px_2px_-2px_rgba(0,0,0,0.5)] focus:outline-none focus:ring-2 focus:ring-blue-500">
                     <option value="opcion1">Cuidado de perros</option>
                     <option value="opcion2">Limpiar baños</option>
