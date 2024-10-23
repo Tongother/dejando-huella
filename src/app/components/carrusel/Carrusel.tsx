@@ -8,7 +8,6 @@ import { motion } from "framer-motion";
 
 // Importaciones de imágenes
 import img1 from "@/../public/breadcrumb_1.png";
-import img2 from "@/../public/perritos/nombreBandita.png";
 import arrow from "@/../public/icons/arrow.png";
 
 const Carrusel: React.FC = () => {
