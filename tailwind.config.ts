@@ -25,7 +25,9 @@ const config: Config = {
         irish: ["Irish Grover"],
         inria: ["Inria Serif"],
         itim: ["Itim"],
-        ruby: ["Rubik"]
+        ruby: ["Rubik"],
+        jer: ["Jersey 15"],
+        ini: ["Inika"]
       },
       backgroundImage: {
         'adopciones': "url('/fondoAdopcion.png')",
