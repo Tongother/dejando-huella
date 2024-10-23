@@ -1,36 +1,13 @@
 import React from 'react';
 import Image from 'next/image';
 
-const Nosotros = () => {
-    const works = [
-        {
-            title: 'Adopciones Responsables',
-            description: 'Nos comprometemos a encontrar hogares seguros y amorosos para perritos sin hogar, promoviendo adopciones responsables y conscientes.',
-            image: '/images/adopciones.jpg',
-        },
-        {
-            title: 'Cuidado Veterinario',
-            description: 'Ofrecemos atención médica a perritos rescatados, asegurándonos de que reciban el tratamiento y los cuidados que necesitan.',
-            image: '/images/cuidado-veterinario.jpg',
-        },
-        {
-            title: 'Rescate y Rehabilitación',
-            description: 'Rescatamos perros en situación vulnerable, brindando rehabilitación física y emocional para ayudarlos a encontrar un hogar definitivo.',
-            image: '/images/rescate-rehabilitacion.jpg',
-        },
-        {
-            title: 'Conciencia y Educación',
-            description: 'Impulsamos campañas de concientización sobre el cuidado y respeto de los animales, fomentando una cultura de adopción responsable.',
-            image: '/images/educacion.jpg',
-        },
-    ];
-
+const PaginaPrincipal = () => {
     return (
-        <div className="w-full flex flex-col items-center gap-12 py-10">
-            <article className="w-full flex flex-col md:flex-row justify-center items-center gap-12 py-10">
-                <div className="w-80 h-80 relative">
+        <div>
+            <article className="w-full flex flex-col md:flex-row justify-center items-center gap-12 py-10 md:m-0">
+                <div className="w-80 h-80 relative md:block">
                     <Image 
-                        src="/Perrito.png" 
+                        src="/Perrito.png"  
                         alt="Imagen de un perrito"
                         fill 
                         className="rounded-full object-cover" 
@@ -38,32 +15,89 @@ const Nosotros = () => {
                 </div>
                 <div className="max-w-xl text-center md:text-left">
                     <h2 className="text-3xl md:text-4xl font-bold text-[#374193]">
-                        Cada mascota adoptada es una victoria en nuestra misión de construir un mundo mejor.
+                        En el mundo de las adopciones, una inteligente propuesta hizo una gran diferencia:
                     </h2>
                     <p className="mt-4 text-lg italic text-gray-700">
-                        &rdquo;En Dejando Huella, creemos que cada mascota merece una segunda oportunidad, un hogar donde pueda ser amado.&rdquo;
+                    &rdquo;En Dejando Huella, creemos que cada mascota merece una segunda oportunidad, un hogar donde pueda ser amado.&rdquo;
                     </p>
+                    <p className="mt-2 text-right text-gray-500">- Dejando Huella</p>
                 </div>
             </article>
 
-            <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl">
-                {works.map((work, index) => (
-                    <div key={index} className="bg-white p-6 rounded-lg shadow-lg">
-                        <Image 
-                            src={work.image} 
-                            alt={work.title} 
-                            width={400} 
-                            height={250} 
-                            className="rounded-md object-cover"
-                        />
-                        <h3 className="mt-4 text-2xl font-bold text-[#FFB602]">{work.title}</h3>
-                        <p className="mt-2 text-gray-600">{work.description}</p>
+                <section className="w-full flex flex-col gap-12 items-center py-10 px-4 lg:px-[100px]">
+                    <div className="flex flex-col md:flex-row justify-between items-center gap-8 max-w-6xl">
+                        <div className="md:w-1/2">
+                            <h2 className="text-3xl md:text-4xl font-bold text-[#374193] text-center md:text-left">
+                                ¿Cuál es nuestro objetivo principal?
+                            </h2>
+                            <p className="mt-4 text-lg text-gray-700 text-justify">
+                                En Dejando Huella, nuestro objetivo es crear conciencia sobre la adopción, el respeto y la importancia de dar una segunda oportunidad a los animales en situación de calle. Creemos que cada perro y gato merece un hogar lleno de amor y cuidado. Queremos combatir la sobrepoblación de animales callejeros y brindarles una vida digna y feliz.
+                            </p>
+                        </div>
+                        <div className="w-60 h-60 relative"> 
+                            <Image 
+                                src="/Perrito2.png"
+                                alt="Perrito"
+                                fill
+                                className="object-cover rounded-lg"
+                            />
+                        </div>
                     </div>
-                ))}
-            </section>
+
+                    <div className="flex flex-col md:flex-row-reverse justify-between items-center gap-8 lg:gap-36 max-w-6xl lg:max-w-none ">
+                        <div className="md:w-1/2 lg:w-[600px]">
+                            <h2 className="text-3xl md:text-4xl font-bold text-[#374193] text-center lg:text-center md:text-left">
+                                Nuestra misión
+                            </h2>
+                            <p className="mt-4 text-lg text-gray-700 text-justify">
+                                Queremos desafiar la idea de que solo los perros o gatos de raza tienen valor. Nos dedicamos a promover la adopción de animales mestizos, mostrándoles en su mejor versión para que el amor por ellos crezca desde el primer encuentro. Cada adopción es un acto de amor que transforma vidas, tanto la del animal como la de su nueva familia.
+                            </p>
+                        </div>
+                        <div className="w-60 h-60 relative flex justify-center items-center">
+                            <Image 
+                                src="/Gatito1.png" 
+                                alt="Gatito"
+                                fill
+                                className="object-cover rounded-lg" 
+                            />
+                        </div>
+                    </div>
+
+                    <div className="flex flex-col md:flex-row justify-between items-center gap-8 max-w-6xl">
+                        <div className="md:w-1/2">
+                            <h2 className="text-3xl md:text-4xl font-bold text-[#374193] text-center lg:text-center md:text-left">
+                                Nuestra vision
+                            </h2>
+                            <p className="mt-4 text-lg text-gray-700 text-justify">
+                                En Dejando Huella, nuestro objetivo es crear conciencia sobre la adopción, el respeto y la importancia de dar una segunda oportunidad a los animales en situación de calle. Creemos que cada perro y gato merece un hogar lleno de amor y cuidado. Queremos combatir la sobrepoblación de animales callejeros y brindarles una vida digna y feliz.
+                            </p>
+                        </div>
+                        <div className="w-60 h-60 relative"> 
+                            <Image 
+                                src="/PerroL.png"
+                                alt="Perrito"
+                                fill
+                                className="object-cover rounded-lg"
+                            />
+                        </div>
+                    </div> 
+                </section>
+                <div className="flex flex-col max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 ">
+                    <h2 className="text-3xl font-extrabold text-[#374193] text-center">La Historia de Dejando Huella</h2>
+                    <p className="mt-4 text-lg text-gray-500 text-justify">
+                        En el invierno del 2010, una noche particularmente fría, Tania, una joven amante de los animales, encontró a un perro herido y abandonado a la orilla de un camino en las afueras de la ciudad. Era un mestizo de ojos tristes y cuerpo tembloroso, apenas respiraba. Sofía, sin pensarlo dos veces, lo recogió, lo envolvió en su abrigo y corrió al veterinario más cercano. Esa noche, a pesar de los esfuerzos, el perro no sobrevivió. Su corazón estaba demasiado cansado por el abandono y el frío. <br />
+                        <br />
+                        Ese trágico momento cambió la vida de Tania para siempre. La impotencia y el dolor de no haber llegado a tiempo encendieron en ella una determinación inquebrantable: no permitir que más animales sufrieran el mismo destino. Así nació &rdquo;Dejando Huella&rdquo;. <br />
+                        <br />
+                        Con apenas unos ahorros y la ayuda de unos cuantos amigos, Sofía empezó a rescatar animales callejeros, brindándoles cuidado, refugio y, lo más importante, una segunda oportunidad para encontrar el amor de una familia. Los primeros años fueron duros. Las deudas se acumulaban y muchas noches Sofía se preguntaba si podría seguir adelante. Pero cada adopción, cada perro o gato que encontraba un hogar, le daba la fuerza para continuar. <br />
+                        <br />
+                        Hoy, Dejando Huella ha crecido, pero su esencia sigue siendo la misma. Lo que empezó como un acto de desesperación y dolor, se ha convertido en una organización que ha cambiado miles de vidas, tanto de animales como de las personas que deciden adoptarlos. Cada perro y gato que pasa por nuestras puertas lleva consigo la memoria de aquel mestizo que no pudo salvarse, pero cuya huella inspiró algo mucho más grande.
+                    </p>
+                </div>
         </div>
     );
 };
 
-export default Nosotros;
+export default PaginaPrincipal;
+
 

@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import logo_morado_naranja from "../../../../public/logos/logo_morado_naranja.png";
+import "./Footer.css"
 
 const Footer = () => {
   return (
@@ -134,8 +135,8 @@ const Footer = () => {
               </a>
             </div>
             <div className="lg:absolute md:left-[50%] lg:left-[52.5%] xl:left-[66%] flex items-start mt-4 justify-evenly sm:mt-0 ">
-                    <Link href="#" className="bg-[#182271] text-white text-center no-underline font-bold text-sm md:text-xl lg:ml-8 rounded-[5px] p-[5px] md:p-[10px]">Iniciar sesión</Link>
-                    <Link href="#" className="bg-[#182271] text-white text-center no-underline font-bold text-sm md:text-xl ml-4 lg:ml-8 rounded-[5px] p-[5px] md:p-[10px]">Registrarse</Link> 
+                    <Link href="#" className=" btnHover bg-[#182271] text-white text-center no-underline font-bold text-sm md:text-xl lg:ml-8 rounded-[5px] p-[5px] md:p-[10px]">Iniciar sesión</Link>
+                    <Link href="#" className=" btnHover bg-[#182271] text-white text-center no-underline font-bold text-sm md:text-xl ml-4 lg:ml-8 rounded-[5px] p-[5px] md:p-[10px]">Registrarse</Link> 
             </div>
           </div>
         </div>
