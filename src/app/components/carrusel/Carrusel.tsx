@@ -7,7 +7,7 @@ import img2 from "@/../public/perritos/nombreBandita.png";
 import arrow from "@/../public/icons/arrow.png";
 
 const Carrusel: React.FC = () => {
-  const images: string[] = [img1.src, img1.src, img2.src];
+  const images: string[] = [img1.src, img1.src, img1.src];
   const [tiempoScrollTouch, setTiempoScrollTouch] = useState<NodeJS.Timeout>();
   const intervalRef = useRef<NodeJS.Timeout>();
   const [scrollPos, setScrollPos] = useState(0);
