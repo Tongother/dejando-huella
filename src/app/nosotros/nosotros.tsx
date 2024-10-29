@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import "./styles.css";
 
 const PaginaPrincipal = () => {
     return (
@@ -94,6 +95,59 @@ const PaginaPrincipal = () => {
                         Hoy, Dejando Huella ha crecido, pero su esencia sigue siendo la misma. Lo que empezó como un acto de desesperación y dolor, se ha convertido en una organización que ha cambiado miles de vidas, tanto de animales como de las personas que deciden adoptarlos. Cada perro y gato que pasa por nuestras puertas lleva consigo la memoria de aquel mestizo que no pudo salvarse, pero cuya huella inspiró algo mucho más grande.
                     </p>
                 </div>
+                <section className="flex flex-wrap justify-center items-center py-10 gap-6">
+                    <div className="card">
+                        <div className="face front">
+                            <Image src="/gatinho.jpeg" alt="Benjamin" className="object-cover w-full h-full" width={500} height={500} />
+                            <h3>Benjamin</h3>
+                        </div>
+                        <div className="face back">
+                            <h3>Benjamin</h3>
+                            <p>
+                                &rdquo;Rescatado el 10 de febrero de 2024, encontrado bajo la lluvia en el parque central.&rdquo;
+                            </p>
+                        </div>
+                    </div>
+                    <div className="card">
+                        <div className="face front">
+                            <Image src="/Gatoo.jpeg" alt="Laura" className="object-cover w-full h-full" width={500} height={500} />
+                            <h3>Laura</h3>
+                        </div>
+                        <div className="face back">
+                            <h3>Laura</h3>
+                            <p>
+                                &rdquo;Laura fue encontrada el 22 de marzo de 2024, muy cerca del río.&rdquo;
+                            </p>
+                        </div>
+                    </div>
+                    <div className="card">
+                        <div className="face front">
+                            <Image src="/Gat.jpeg" alt="Pablo" className="object-cover w-full h-full" width={500} height={500} />
+                            <h3>Pablo</h3>
+                        </div>
+                        <div className="face back">
+                            <h3>Pablo</h3>
+                            <p>
+                                &rdquo;Rescatado el 5 de marzo de 2024, fue encontrado debajo de un puente por el río Sabinal.&rdquo;
+                            </p>
+                        </div>
+                    </div>
+                    <div className="card">
+                        <div className="face front">
+                            <Image src="/ParGatos.jpeg" alt="Gatitos" className="object-cover w-full h-full" width={500} height={500} />
+                            <h3>Gatitos</h3>
+                        </div>
+                        <div className="face back">
+                            <h3>Gatitos</h3>
+                            <p>
+                                &rdquo;Rescatado el 5 de marzo de 2024, fue encontrado debajo de un puente por el río Sabinal.&rdquo;
+                            </p>
+                        </div>
+                    </div>
+                </section>
+            
+                
+
         </div>
     );
 };
