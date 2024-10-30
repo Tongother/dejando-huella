@@ -1,4 +1,3 @@
-import { ruby } from "framer-motion/client";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -27,7 +26,9 @@ const config: Config = {
         itim: ["Itim"],
         ruby: ["Rubik"],
         jer: ["Jersey 15"],
-        ini: ["Inika"]
+        ini: ["Inika"],
+        luckiest: ["Luckiest Guy"],
+
       },
       backgroundImage: {
         'adopciones': "url('/fondoAdopcion.png')",

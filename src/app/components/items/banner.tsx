@@ -3,7 +3,7 @@
 import useIsMobile from '@/app/hooks/useIsMobile';
 import Image from 'next/image';
 
-export const FondoIconos = ({ children, }: Readonly<{ children: React.ReactNode; }>) => {
+export const FondoIconos = ({ children }: Readonly<{ children: React.ReactNode }>) => {
 
     const isMobile = useIsMobile();
 
@@ -72,8 +72,7 @@ export const FondoIconos = ({ children, }: Readonly<{ children: React.ReactNode;
 
             {children}
         </div>
-
-    )
+    );
 }
 
 export default FondoIconos;
