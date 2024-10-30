@@ -18,7 +18,7 @@ export const BotonSeleccion = ({ texto, color, link, imagen }: BotonSeleccionPro
             <div className="relative flex flex-col items-center h-[250px] overflow-hidden w-[260px] ">
                 <Image className="sombra" src={imagen.src} alt={texto} width={imagen.width} height={imagen.height} />
                 <button
-                    className={`sombra absolute bottom-0 w-full bg-[${color}] text-white text-2xl font-itim py-2 px-6 rounded-[20px] `}
+                    className={` absolute bottom-0 w-full bg-[${color}] text-white text-2xl font-itim py-2 px-6 rounded-[20px] `}
                 >
                     {texto}
                 </button>
