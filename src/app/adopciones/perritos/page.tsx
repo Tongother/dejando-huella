@@ -7,7 +7,7 @@ export default function Perritos() {
     const mascotas = [
         {
             imagen: "/perritos/Neon.png",
-            nombre: "Neón",
+            nombre: "Nerón",
             edad: "6 años",
             sexo: "Macho",
             personalidad: "Tranquilo",
