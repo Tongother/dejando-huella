@@ -62,21 +62,21 @@ export async function POST(req: Request) {
     // }
 
     // Crear token: jose
-    try {
-        const secret = new TextEncoder().encode(process.env.JWT_SECRET || 'your-secret-key');
-        token = await new SignJWT({ username })
-            .setProtectedHeader({ alg: 'HS256' })
-            .setIssuedAt()
-            .setExpirationTime('2h')
-            .sign(secret);
-    } catch (error: any) {
-        return Response.json({ error: 'Error al crear token', status: 500 });
-    }
+    // try {
+    //     const secret = new TextEncoder().encode(process.env.JWT_SECRET || 'your-secret-key');
+    //     token = await new SignJWT({ username })
+    //         .setProtectedHeader({ alg: 'HS256' })
+    //         .setIssuedAt()
+    //         .setExpirationTime('2h')
+    //         .sign(secret);
+    // } catch (error: any) {
+    //     return Response.json({ error: 'Error al crear token', status: 500 });
+    // }
 
     // Crear cookie de usuario: next-headers
     try {
         const setCookie = cookies();
-        setCookie.set('userToken', token,{
+        setCookie.set('userToken', username,{
             maxAge: 8 * 60 * 60,
             httpOnly: false,
             secure: process.env.NODE_ENV === 'production',
