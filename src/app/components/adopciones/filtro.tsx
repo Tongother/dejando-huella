@@ -146,7 +146,7 @@ export const Filtro = () => {
                             min="0"
                             max="20"
                             value={edadSlider}
-                            defaultValue={20}
+                            
                             step="1"
                             onChange={handleEdad}
                             onBlur={handleSliderBlur}

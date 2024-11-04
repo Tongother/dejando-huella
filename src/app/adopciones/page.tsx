@@ -4,9 +4,10 @@ import BotonSeleccion from "../components/adopciones/seleccion";
 import La_chona from "../../../public/perritos/La_chona.png";
 import Minnie from "../../../public/gatitos/Minnie.png";
 import VoluntariosBanner from "../components/adopciones/voluntarios";
+import getData from "../../../database/config";
 
 
-export default function Adopciones() {
+export default async function Adopciones() {
   return (
     <>
       <FondoIconos>
