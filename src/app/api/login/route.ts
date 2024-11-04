@@ -10,36 +10,56 @@ import { cookies } from 'next/headers';
 //     user: process.env.MYSQL_DATABASE_USER,
 //     password: process.env.MYSQL_DATABASE_PASSWORD,
 //     database: process.env.MYSQL_DATABASE_NAME,
-//     multipleStatements: true,
+//     multipleStatements: true,S
 // });
 
-export async function GET(request: Request) {
+export async function GET(req: Request) {
     return new Response('Te encontré esponja', { status: 200 });
 }
 export async function POST(req: Request) {
     const { username, password } = await req.json();
-    let token = '';    
-    //Validar que el usuario exista
+    let token = '';   
+    //Validar que el cuerpo de la petición esté completo
+    if (username === '' || password === '') {
+        return Response.json({ error: 'Petición incompleta', status: 400 });
+    }
+    //TODO:
+    // //Validar que no haya un inicio de sesión activo
     try {
-        const [rows] = await db.query('SELECT * FROM admin WHERE username = ?;', [username]);
-        if (rows.length === 0) {
-            return Response.json({ error: 'Usuario no encontrado', status: 404 });
+        const cookies = req.headers.get('cookie');
+        if (cookies) {
+            const cookiesArray = cookies.split(';');
+            for (let i = 0; i < cookiesArray.length; i++) {
+                if (cookiesArray[i].includes('userToken')) {
+                    return Response.json({ error: 'Ya hay una sesión activa', status: 202 });
+                }
+            }
         }
     } catch (error: any) {
-        return Response.json({ error: 'No se pudo encontrar el usuario', status: 500 });
+        return Response.json({ error: 'Error al validar sesión activa', status: 500 });
     }
 
-    // Comparar contraseñas: bcrypt-ts
-    try {
-        const [rows] = await db.query('SELECT password FROM admin WHERE username = ?;', [username]);
-        const truePassword = rows[0].password;
-        const verifyPassword = compareSync(password, truePassword);
-        if (!verifyPassword) {
-            return Response.json({ message: 'Contraseña incorrecta', status: 202 });
-        }
-    } catch (error: any) {
-        return Response.json({ error: 'Error al validar contraseña', status: 500 });
-    }
+    // //Validar que el usuario exista
+    // try {
+    //     const [rows] = await db.query('SELECT * FROM admin WHERE username = ?;', [username]);
+    //     if (rows.length === 0) {
+    //         return Response.json({ error: 'Usuario no encontrado', status: 404 });
+    //     }
+    // } catch (error: any) {
+    //     return Response.json({ error: 'No se pudo encontrar el usuario', status: 500 });
+    // }
+
+    // // Comparar contraseñas: bcrypt-ts
+    // try {
+    //     const [rows] = await db.query('SELECT password FROM admin WHERE username = ?;', [username]);
+    //     const truePassword = rows[0].password;
+    //     const verifyPassword = compareSync(password, truePassword);
+    //     if (!verifyPassword) {
+    //         return Response.json({ message: 'Contraseña incorrecta', status: 202 });
+    //     }
+    // } catch (error: any) {
+    //     return Response.json({ error: 'Error al validar contraseña', status: 500 });
+    // }
 
     // Crear token: jose
     try {
@@ -65,6 +85,7 @@ export async function POST(req: Request) {
     } catch (error: any) {
         return Response.json({ error: 'Error al crear cookie', status: 500 });
     }
+
     //Respuesta final
     return Response.json({ message: 'Autenticación exitosa', status: 200 });
 }

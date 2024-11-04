@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import logo from "../../../../public/logos/logo_morado_naranja.png";
+import { redirect } from "next/dist/server/api-utils";
 
 type HeaderProps = {
     componentHeight?: number;
@@ -39,6 +40,9 @@ export const Header = ({ componentHeight = 200 }: HeaderProps) => {
         // Actualiza el último valor de scroll
         setLastScrollY(latest);
     });
+    function HandlerOnClickIngresar() {
+        window.location.href = '/login';
+    }
 
     return (
         <>
@@ -81,7 +85,7 @@ export const Header = ({ componentHeight = 200 }: HeaderProps) => {
                             <Link href="/contacto">Contacto</Link>
                         </li>
 
-                        <button className="bg-[#374193] text-white px-4 py-2 rounded-3xl w-32">Ingresar</button>
+                        <button className="bg-[#374193] text-white px-4 py-2 rounded-3xl w-32" onClick={HandlerOnClickIngresar}>Ingresar</button>
                     </ul>
                 </nav>
             </motion.header>
