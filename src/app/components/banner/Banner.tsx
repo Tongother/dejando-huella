@@ -14,8 +14,6 @@ const Banner = () => {
           Conocer más
         </Link>
       </section>
-
-      {/* Para pantallas móviles */}
       <section className="flex lg:hidden flex-col justify-evenly items-center bg-[#4C62D9] rounded-none text-white w-full h-[300px] box-border">
         <div className="flex flex-col gap-2 text-3xl text-center font-normal font-ramm">
           <h1>¡Ayúdanos desde cerquita!</h1>
