@@ -2,11 +2,12 @@
 import Carrusel from "../components/carrusel/Carrusel";
 import FondoIconos from "../components/items/banner";
 import Image from "next/image";
+
 export default function () {
   const HandlerClickDonation = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     e.preventDefault();
     const id = e.currentTarget.id;
-    console.log(id);
+    window.location.href = `/donativos/${id}`;
   }
   return <section>
     <Carrusel />
@@ -46,7 +47,7 @@ export default function () {
                 <h3 className="font-itim inline lg:block text-sm text-slate-600 lg:text-center lg:font-semibold lg:text-lg">$10000000</h3>
               </div>
             </button>
-
+            
             <button id="d3" onClick={HandlerClickDonation} className="shadow flex items-center rounded-3xl p-2 bg-[#F6F6FF] lg:basis-[170px] lg:grow lg:h-[170px] lg:flex-col lg:justify-center lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-105 lg:hover:bg-[#dbdbe2]">
               <div className="relative w-8 h-8 m-2 ml-3 mr-4 lg:w-[74px] lg:h-[73px]">
                 <Image src={"/icons/pet-food 3.png"} alt="Comida para perro icono" fill></Image>
