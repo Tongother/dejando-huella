@@ -64,22 +64,22 @@ export const Navbar = () => {
             >
                 <ul className="flex flex-col items-center justify-center h-full space-y-4">
                     <li>
-                        <Link href="/historias_exito">Historias de éxito</Link>
+                        <Link href="/dh/historias_exito">Historias de éxito</Link>
                     </li>
                     <li>
-                        <Link href="/donaciones">Donaciones</Link>
+                        <Link href="/dh/donaciones">Donaciones</Link>
                     </li>
                     <li>
-                        <Link href="/adopciones">Adopciones</Link>
+                        <Link href="/dh/adopciones">Adopciones</Link>
                     </li>
                     <li>
-                        <Link href="/eventos">Eventos próximos</Link>
+                        <Link href="/dh/eventos">Eventos próximos</Link>
                     </li>
                     <li>
-                        <Link href="/nosotros">Nosotros</Link>
+                        <Link href="/dh/nosotros">Nosotros</Link>
                     </li>
                     <li>
-                        <Link href="/contacto">Contacto</Link>
+                        <Link href="/dh/contacto">Contacto</Link>
                     </li>
                 </ul>
             </motion.div>

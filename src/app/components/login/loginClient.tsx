@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image'
-import { useState,useRef, FormEvent, useEffect } from 'react';
+import { useState, FormEvent } from 'react';
 import { loginServer } from './loginServer';
 
 interface userDataType {
