@@ -3,9 +3,8 @@
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import logo from "../../../../public/logos/logo_morado_naranja.png";
-import { redirect } from "next/dist/server/api-utils";
 
 type HeaderProps = {
     componentHeight?: number;
@@ -41,7 +40,7 @@ export const Header = ({ componentHeight = 200 }: HeaderProps) => {
         setLastScrollY(latest);
     });
     function HandlerOnClickIngresar() {
-        window.location.href = '/login';
+        window.location.href = '/dh/login';
     }
 
     return (
@@ -62,13 +61,13 @@ export const Header = ({ componentHeight = 200 }: HeaderProps) => {
                         <li></li>
                         <li></li>
                         <li>
-                            <Link href="/historias_exito">Historias de éxito</Link>
+                            <Link href="/dh/historias_exito">Historias de éxito</Link>
                         </li>
                         <li>
-                            <Link href="/donaciones">Donaciones</Link>
+                            <Link href="/dh/donaciones">Donaciones</Link>
                         </li>
                         <li>
-                            <Link href="/adopciones">Adopciones</Link>
+                            <Link href="/dh/adopciones">Adopciones</Link>
                         </li>
                         <li className="mx-6">
                             <Link href="/">
@@ -76,13 +75,13 @@ export const Header = ({ componentHeight = 200 }: HeaderProps) => {
                             </Link>
                         </li>
                         <li>
-                            <Link href="/eventos">Eventos próximos</Link>
+                            <Link href="/dh/eventos">Eventos próximos</Link>
                         </li>
                         <li>
-                            <Link href="/nosotros">Nosotros</Link>
+                            <Link href="/dh/nosotros">Nosotros</Link>
                         </li>
                         <li>
-                            <Link href="/contacto">Contacto</Link>
+                            <Link href="/dh/contacto">Contacto</Link>
                         </li>
 
                         <button className="bg-[#374193] text-white px-4 py-2 rounded-3xl w-32" onClick={HandlerOnClickIngresar}>Ingresar</button>

@@ -1,6 +1,5 @@
 "use client";
-import Carrusel from "../components/carrusel/Carrusel";
-import FondoIconos from "../components/items/banner";
+import Carrusel from "../../components/carrusel/Carrusel";
 import Image from "next/image";
 
 export default function () {

@@ -4,7 +4,7 @@ import "./styles.css";
 
 const PaginaPrincipal = () => {
     return (
-        <div>
+        <div className="font-ini">
             <article className="w-full flex flex-col md:flex-row justify-center items-center gap-12 py-10 md:m-0">
                 <div className="w-80 h-80 relative md:block">
                     <Image 
