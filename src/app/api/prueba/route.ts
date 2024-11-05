@@ -1,11 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
-import connectionDb from '../../../../database/config';
+import postgres from 'postgres';
 
 export async function GET(req: NextRequest) {
     try {
-        const sql = await connectionDb();
+        const sql = postgres(process.env.DATABASE_URL as string, { 
+            ssl: 'require',
+        });
         const result = await sql`SELECT 1+1;`;
-
         if (result) {
             return NextResponse.json({
                 message: 'Conexión a la base de datos exitosa',
@@ -24,4 +25,3 @@ export async function GET(req: NextRequest) {
         }, { status: 500 });
     }
 }
-

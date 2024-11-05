@@ -5,7 +5,12 @@ interface userDataType {
 	password: string | null
 }
 export const loginServer = async (user:userDataType) => {
-    const response = await axios.post(`api/login`, user);
-    const status = response.data.status;
-    return status;
+    try {
+        const response = await axios.post(`api/login`, user);
+        const status = response.data.status;
+        return status;
+    } catch (error:any) {
+        console.log("Error: ",error);
+        return error.response.data.status;
+    }
 }

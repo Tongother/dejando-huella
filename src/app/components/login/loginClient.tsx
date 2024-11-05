@@ -22,7 +22,6 @@ export default function Login() {
 
 	async function HandlerSubmit(event: FormEvent<HTMLFormElement>) {
 		event.preventDefault();
-		console.log(userData);
 		loginServer(userData).then((response) => {
 			if(response === 200){
 				setAlert('success');
@@ -31,6 +30,9 @@ export default function Login() {
 				}, 2000);
 			}else{
 				setAlert('failed');
+				setTimeout(() => {
+					setAlert(null);
+				}, 2000);
 			}
 		});
 	}
@@ -42,7 +44,6 @@ export default function Login() {
 				<Image src={"/logos/logo_morado_naranja.png"} alt="Perfil" fill sizes='128px'></Image>
 			</div>
 			<h1 className='text-sm font-ini font-semibold hidden lg:block'>Cada adopción es una nueva historia</h1>
-			<h1 className='text-sm font-ini font-semibold'>¿Eres nuevo usuario? Regístrate</h1>
 			<form className='flex flex-col gap-4 p-1 lg:items-center' onSubmit={HandlerSubmit}>
 				<input onChange={HandlerOnChange} required type="text" name='username' placeholder='Correo' className='px-4 py-1 rounded-2xl font-ini font-semibold border-[1px] border-[#F6A700] focus:outline-none focus:ring-[2px] focus:ring-[#F6A700] lg:py-2 lg:px-5 lg:shadow-inner lg:min-w-[490px]'/>
 				<input onChange={HandlerOnChange} required type="password" name='password' placeholder='Contraseña' className='px-4 py-1 rounded-2xl font-ini font-semibold border-[1px] border-[#F6A700] focus:outline-none focus:ring-[2px] focus:ring-[#F6A700] lg:py-2 lg:px-5 lg:shadow-inner lg:min-w-[490px]'/>
@@ -50,7 +51,7 @@ export default function Login() {
 					Iniciar Sesión
 				</button>
 				{alert==='failed' && (
-					<div className='rounded-xl p-2 text-white bg-red-500'>Chupaste mano</div>
+					<div className='rounded-xl p-2 text-white bg-red-500'>Nombre de usuario o contraseña incorrectos.</div>
 				)}
 				{alert==='success' && (
 					<div className='rounded-xl p-2 text-white bg-green-500'>Sí jaló manito</div>
