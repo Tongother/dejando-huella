@@ -9,7 +9,7 @@ interface petDataType {
     size: string | null,
     adoptado: boolean,
 }
-export const loginServer = async (pet:petDataType) => {
+export const postPerros = async (pet:petDataType) => {
     try {
         const response = await axios.post(`api/crud`, pet);
         const status = response.data.status;
