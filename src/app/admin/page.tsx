@@ -13,7 +13,7 @@ export default async function Admin () {
     const mascotas = data;
 
     return (
-        <div>
+        <div className="flex flex-col items-center flex-auto min-w-[100px]">
             <Lista pets={mascotas as any} />
             <FormularioPerros />
         </div>
