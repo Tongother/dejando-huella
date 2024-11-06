@@ -2,8 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import connectionDb from '../../../../database/config';
 
 export async function GET(req: NextRequest) {
+    const sql = await connectionDb();
     try {
-        const sql = await connectionDb();
         const result = await sql`SELECT * FROM vista_perros`;
         if (result) {
             return NextResponse.json(result);
@@ -20,5 +20,7 @@ export async function GET(req: NextRequest) {
             message: 'Error al conectar a la base de datos',
             error,
         }, { status: 500 });
-    }       
+    }finally{
+        await sql.end();
+    }
 }

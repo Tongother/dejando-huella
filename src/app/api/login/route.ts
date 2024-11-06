@@ -70,6 +70,8 @@ export async function POST(req: Request) {
 			status: 500,
 			headers: { 'Content-Type': 'application/json' }
 		});
+	}finally{
+		await sql.end();
 	}
 
 	// Comparar contraseñas: bcrypt-ts
@@ -88,6 +90,8 @@ export async function POST(req: Request) {
 			status: 500,
 			headers: { 'Content-Type': 'application/json' }
 		});
+	}finally{
+		await sql.end();
 	}
 
 	// Crear token: jose
