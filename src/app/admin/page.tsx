@@ -1,8 +1,10 @@
-// import { cookies } from "next/headers";
-// import FormLocalStorage from "../components/FormLocalStorage"
+"use client"
+import { cookies } from "next/headers";
+import FormLocalStorage from "../components/FormLocalStorage";
 import { FormularioPerros } from "../components/admin/Formulario";
 import Lista from "../components/admin/Lista";
-export default async function Admin() {
+
+export default async function Admin () {
     // const HandleCookie = await cookies()
     // const userCookie = HandleCookie.get('userToken');
     // const username = userCookie?.value
