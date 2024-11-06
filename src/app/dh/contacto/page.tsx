@@ -10,19 +10,13 @@ export default function Contacto() {
     return(
         <>
             <Banner />
-            <div className="animationScroll">
-                <Banner_preguntas />
-            </div>
+            <Banner_preguntas />
 
-            <div className="animationScroll">
-                <FondoIconos>
-                    <Formulario />
-                </FondoIconos>
-            </div>
+            <FondoIconos>
+                <Formulario />
+            </FondoIconos>
 
-            <div className="animationScroll">
-                <ElementoPerrito/>
-            </div>
+            <ElementoPerrito/>
         </>
     )
 }

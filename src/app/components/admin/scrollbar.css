@@ -1,0 +1,10 @@
+/* Cambiar el color a la scroll bar */
+.cajaBotones::-webkit-scrollbar {
+  width: 4px;
+}
+
+.cajaBotones::-webkit-scrollbar-thumb {
+    background: #d6d6fe;
+    border-radius: 10px;
+}
+

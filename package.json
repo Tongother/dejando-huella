@@ -13,14 +13,16 @@
     "axios": "^1.7.7",
     "bcrypt-ts": "^5.0.2",
     "cookie": "^1.0.1",
-    "framer-motion": "^11.11.7",
+    "framer-motion": "^11.11.11",
     "jose": "^5.9.6",
+    "js-cookie": "^3.0.5",
     "next": "14.2.15",
     "postgres": "^3.4.5",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@types/js-cookie": "^3.0.6",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
