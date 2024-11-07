@@ -1,4 +1,5 @@
 import { FormularioPerros } from "@/components/admin/Formulario";
+import FormLocalStorage from "../FormLocalStorage";
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 import Lista from "@/components/admin/Lista";
 
@@ -8,9 +9,9 @@ export default function PaginaPrincipal ({mascotas}: InferGetServerSidePropsType
     // const username = userCookie?.value
 
     return (
-        <div className="flex flex-col items-center flex-auto min-w-[100px]">
-            <Lista pets={mascotas as any} />
-            <FormularioPerros />
+        <div className="flex flex-col items-center flex-auto min-w-screen min-h-screen">
+            <Lista pets={mascotas}></Lista>
+            <FormLocalStorage idEdit={1}/>
         </div>
     )
 }
