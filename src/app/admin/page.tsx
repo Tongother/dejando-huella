@@ -5,17 +5,19 @@ import { FormularioPerros } from "../components/admin/Formulario";
 import Lista from "../components/admin/Lista";
 
 export default async function Admin () {
-    // const HandleCookie = await cookies()
-    // const userCookie = HandleCookie.get('userToken');
-    // const username = userCookie?.value
-    const response = await fetch('http://localhost:3000/api/mascotas');
-    const data = await response.json();
-    const mascotas = data;
-
+    // async function rare() {
+    //     const HandleCookie = await cookies()
+    //     const userCookie = HandleCookie.get('userToken');
+    //     const username = userCookie?.value
+    //     const response = await fetch('http://localhost:3000/api/mascotas');
+    //     const data = await response.json();
+    //     const mascotas = data;
+    // }
     return (
-        <div className="flex flex-col items-center flex-auto min-w-[100px]">
-            <Lista pets={mascotas as any} />
-            <FormularioPerros />
+        <div className="w-[100vw] h-[100vh] flex justify-center items-center">
+            {/* <Lista pets={mascotas as any} /> */}
+            {/* <FormularioPerros /> */}
+            <FormLocalStorage id={1}/>
         </div>
     )
 }
