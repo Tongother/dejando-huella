@@ -1,6 +1,6 @@
 'use client'
 
-import useIsMobile from "../../hooks/useIsMobile";
+import useIsMobile from "../../app/hooks/useIsMobile";
 import { Header } from "./header";
 import { Navbar } from "./navbar";
 

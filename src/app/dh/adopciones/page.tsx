@@ -1,9 +1,9 @@
-import HogarTemporal from "@/app/components/adopciones/hogar_temporal";
-import FondoIconos from "@/app/components/items/banner";
-import BotonSeleccion from "@/app/components/adopciones/seleccion";
+import HogarTemporal from "@/components/adopciones/hogar_temporal";
+import FondoIconos from "@/components/items/banner";
+import BotonSeleccion from "@/components/adopciones/seleccion";
 import La_chona from "@/app/../../public/perritos/La_chona.png";
 import Minnie from "@/app/../../public/gatitos/Minnie.png";
-import VoluntariosBanner from "@/app/components/adopciones/voluntarios";
+import VoluntariosBanner from "@/components/adopciones/voluntarios";
 
 export default async function Adopciones() {
   return (

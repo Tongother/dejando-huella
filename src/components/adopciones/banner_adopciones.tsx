@@ -1,7 +1,4 @@
 import Image from "next/image";
-import Ohana from "../../../../public/perritos/Ohana.png";
-import Mickey from "../../../../public/gatitos/mickey1.png";
-import LogoMoradoNaranja from "../../../../public/logos/logo_morado_naranja.png";
 
 interface BannerAdopcionesProps {
     tipo: string;
@@ -14,9 +11,9 @@ export const BannerAdopciones = ({tipo}:BannerAdopcionesProps) => {
                 <p className="font-inria font-bold text-[#4C62D9] text-sm">No necesitas palabras para entender su amor, solo un corazón para darle un hogar.</p>
             </div>
             <div className="w-full flex justify-center">
-                <Image className="w-auto" src={LogoMoradoNaranja.src} alt="Logo banner" width={200} height={200} />
+                <Image className="w-auto" src="/public/logos/logo_morado_naranja.png" alt="Logo banner" width={200} height={200} />
             </div>
-            <Image className="absolute -right-10 bottom-0 max-h-full" src={tipo == "perritos" ? Ohana.src : Mickey.src} alt="Mascota en el banner" width={250} height={500} />
+            <Image className="absolute -right-10 bottom-0 max-h-full" src={tipo == "perritos" ? "/perritos/Ohana.png" : "/gatitos/mickey1.png"} alt="Mascota en el banner" width={250} height={500} />
         </div>
     );
 }

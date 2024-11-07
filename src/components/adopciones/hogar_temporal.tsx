@@ -1,12 +1,11 @@
 import Image from "next/image";
-import gatitos_enjaulados from "../../../../public/gatitos/gatitos_enjaulados.png";
 import Link from "next/link";
 
 
 const HogarTemporal = () => {
     return (
         <div className="flex flex-col md:flex-row justify-center gap-10 lg:gap-64 bg-[#FEFEFE] items-center h-auto w-full p-10 md:mt-10">
-            <Image className="sombra h-[15rem] w-[15rem] md:h-[22rem] md:w-[22rem] rounded-[100%] transform transition-transform duration-100 hover:scale-110" src={gatitos_enjaulados.src} alt="Hogar temporal" width={350} height={350} />
+            <Image className="sombra h-[15rem] w-[15rem] md:h-[22rem] md:w-[22rem] rounded-[100%] transform transition-transform duration-100 hover:scale-110" src="/gatitos/gatitos_enjaulados.png" alt="Hogar temporal" width={350} height={350} />
             <div className="flex flex-col items-center justify-center w-full md:w-[600px]">
                 <h1 className="md:text-[40px] text-[30px] font-irish text-center text-[#374193]">¿No puedes adoptar pero quieres ayudar?</h1>
                 <p className="font-itim text-base text-[#F6A700] text-center">Revisa nuestro programa de Dog/Cat Sitting,<span className="text-gray-900"> donde podrás brindar un hogar temporal a alguno de nuestros peluditos mientras llega su adopción definitiva</span></p>

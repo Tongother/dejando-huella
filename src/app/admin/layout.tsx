@@ -1,4 +1,4 @@
-import NavBarAdmin from "../components/admin/NavBarAdmin";
+import NavBarAdmin from "../../components/admin/NavBarAdmin";
 
 const layout = ({ children }: {
     children: React.ReactNode
