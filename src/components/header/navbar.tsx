@@ -1,9 +1,7 @@
 "use client";
-
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
-import logo from "../../../../public/logos/logo_morado_naranja.png";
 import Link from "next/link";
 
 export const Navbar = () => {
@@ -31,7 +29,7 @@ export const Navbar = () => {
         >
             <nav className="w-full flex justify-between items-center px-4 z-50">
                     <Link href={'/'} className="flex items-center">
-                        <Image src={logo.src} alt="Logo" width={40} height={40} priority/>
+                        <Image src="/public/logos/logo_morado_naranja.png" alt="Logo" width={40} height={40} priority/>
                     </Link>
                     <button onClick={() => setMenuOpen(!menuOpen)} className="focus:outline-none">
                         {menuOpen ? (

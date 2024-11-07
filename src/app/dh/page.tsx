@@ -1,8 +1,8 @@
-import Banner from "../components/banner/Banner";
-import Stats from "../components/stats";
-import Banner2 from "../components/banner2/Banner2";
-import Carrusel from "../components/carrusel/Carrusel";
-import Info from "../components/info";
+import Banner from "../../components/banner/Banner";
+import Stats from "../../components/stats";
+import Banner2 from "../../components/banner2/Banner2";
+import Carrusel from "../../components/carrusel/Carrusel";
+import Info from "../../components/info";
 import Image from  "next/image";
 
 export default function Home() {

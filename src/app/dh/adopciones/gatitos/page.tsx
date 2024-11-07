@@ -1,6 +1,6 @@
-import BannerAdopciones from "@/app/components/adopciones/banner_adopciones";
-import HogarTemporal from "@/app/components/adopciones/hogar_temporal";
-import MascotasDisponibles from "@/app/components/adopciones/mascotas_disponibles";
+import BannerAdopciones from "@/components/adopciones/banner_adopciones";
+import HogarTemporal from "@/components/adopciones/hogar_temporal";
+import MascotasDisponibles from "@/components/adopciones/mascotas_disponibles";
 
 export default function Gatitos() {
     // Lista de mascotas

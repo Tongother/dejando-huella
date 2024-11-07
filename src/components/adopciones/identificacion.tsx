@@ -1,8 +1,4 @@
 import Image from "next/image";
-import LogoMano from "../../../../public/logos/mano.png";
-import QrEjemplo from "../../../../public/ICONS/qr_ejemplo.png";
-import FondoCredencial from "../../../../public/fondo_credencial.png";
-import Logo_morado_naranja from "../../../../public/logos/logo_morado_naranja.png";
 
 type IdentificacionProps = {
     mascota: {
@@ -19,13 +15,13 @@ type IdentificacionProps = {
 export const Identificacion = ({ mascota, botonNaranja = false }: IdentificacionProps) => {
     return (
         <div className="h-[200px] w-[300px]  md:h-[300px] md:w-[400px] bg-[#F5F6FF] rounded-lg flex p-5 gap-6 relative sombra">
-            <Image className="absolute -z-10 rounded-lg" src={FondoCredencial.src} alt="Fondo credencial" fill sizes="380px" />
+            <Image className="absolute -z-10 rounded-lg" src="/fondo_credencial.png" alt="Fondo credencial" fill sizes="380px" />
 
 
 
             <div className="flex flex-col gap-4">
                 <div className="flex items-center gap-2">
-                    <Image className="" src={LogoMano.src} alt="Logo mano" width={30} height={30} />
+                    <Image className="" src="/logos/mano.png" alt="Logo mano" width={30} height={30} />
                     <h1 className="font-luckiest text-[#4c62d9] text-2xl md:text-5xl text-center uppercase">{mascota.nombre}</h1>
                 </div>
 
@@ -58,8 +54,8 @@ export const Identificacion = ({ mascota, botonNaranja = false }: Identificacion
                 </p>
             </div>
 
-            <Image className="absolute bottom-4 right-4" src={Logo_morado_naranja.src} alt="Logo" width={30} height={30} />
-            <Image className="absolute top-4 right-4 md:w-[50px] md:h-[50px] w-[30px] h-[30px]" src={QrEjemplo.src} alt="ejemplo qr" width={50} height={50} />
+            <Image className="absolute bottom-4 right-4" src="/logos/logo_morado_naranja.png" alt="Logo" width={30} height={30} />
+            <Image className="absolute top-4 right-4 md:w-[50px] md:h-[50px] w-[30px] h-[30px]" src="/ICONS/qr_ejemplo.png" alt="ejemplo qr" width={50} height={50} />
 
         </div>
     );

@@ -1,6 +1,6 @@
-import Historia from "@/app/components/adopciones/Historia";
-import Perfil from "@/app/components/adopciones/Perfil";
-import Slider from "@/app/components/adopciones/slider";
+import Historia from "@/components/adopciones/Historia";
+import Perfil from "@/components/adopciones/Perfil";
+import Slider from "@/components/adopciones/slider";
 
 const PerfilAdopcion = ({ params }: { params: { id: string } }) => {
     console.log(params.id);

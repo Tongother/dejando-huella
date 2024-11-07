@@ -4,7 +4,6 @@ import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import logo from "../../../../public/logos/logo_morado_naranja.png";
 
 type HeaderProps = {
     componentHeight?: number;
@@ -71,7 +70,7 @@ export const Header = ({ componentHeight = 200 }: HeaderProps) => {
                         </li>
                         <li className="mx-6">
                             <Link href="/">
-                                <Image src={logo.src} alt="Logo" width={80} height={80} />
+                                <Image src="/logos/logo_morado_naranja.png" alt="Logo" width={80} height={80} />
                             </Link>
                         </li>
                         <li>
