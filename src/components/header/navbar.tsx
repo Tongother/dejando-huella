@@ -22,14 +22,14 @@ export const Navbar = () => {
             initial={{ opacity: 1 }}
             animate={{
                 opacity: opacity ? 1 : 0.8,
-                backgroundColor: opacity ? "white" : "#fefefe",
+                backgroundColor: opacity ? "white" : "white",
             }}
             transition={{ type: "tween", duration: 0.3 }}
             className={`md:hidden font-rancho text-[#374193] w-full bg-[#fefefe] flex px-2 justify-center z-50 sticky top-0`}
         >
             <nav className="w-full flex justify-between items-center px-4 z-50">
                     <Link href={'/'} className="flex items-center">
-                        <Image src="/public/logos/logo_morado_naranja.png" alt="Logo" width={40} height={40} priority/>
+                        <Image src="/logos/logo_morado_naranja.png" alt="Logo" width={40} height={40} priority/>
                     </Link>
                     <button onClick={() => setMenuOpen(!menuOpen)} className="focus:outline-none">
                         {menuOpen ? (

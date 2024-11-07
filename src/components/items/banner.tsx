@@ -8,7 +8,7 @@ export const FondoIconos = ({ children }: Readonly<{ children: React.ReactNode }
     const isMobile = useIsMobile();
 
     return (
-        <div className="relative w-full h-auto lg:h-[700px] bg-[#F5F6FF] flex justify-center p-6 md:p-12 lg:items-center">
+        <div className="relative w-full h-auto lg:h-auto  bg-[#F5F6FF] flex justify-center p-6 md:p-12 lg:items-center">
             {!isMobile && (
                 <div>
                     <Image

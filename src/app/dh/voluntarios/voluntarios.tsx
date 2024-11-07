@@ -6,7 +6,7 @@ const Formulario = () => {
             <form className="flex flex-col lg:grid lg:grid-cols-2 gap-5 w-full max-w-[850px]" >
                 <div className="form-group flex flex-col">
                     <label className="text-black text-sm mb-1">Nombre Completo</label>
-                    <input type="text" className="px-4 py-2 rounded-2xl font-semibold border-[1px] border-[#F6A700] focus:outline-none focus:ring-[2px] focus:ring-[#F6A700] lg:shadow-inner" />
+                    <input type="text" className="px-4 py-2 rounded-2xl font-semibold border-[1px] border-[#F6A700] focus:outline-none focus:ring-[2px] focus:ring-[#F6A700] lg:shadow-inner p-20" />
                 </div>
                 <div className="form-group flex flex-col">
                     <label className="text-black text-sm mb-1">Colonia donde vives</label>

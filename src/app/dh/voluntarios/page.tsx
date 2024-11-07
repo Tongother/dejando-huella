@@ -1,12 +1,12 @@
 
 import Formulario from "./voluntarios"
-import FondoIconos from "../components/items/banner";
+import FondoIconos from "@/components/items/banner";
 
 export default function Voluntarios() {
   return (
     <>
       <FondoIconos>
-          <div className="h-auto w-full flex flex-col gap-10 z-10">
+          <div className="h-auto w-full flex flex-col gap-10 z-10 ">
               <div className="w-full flex flex-col items-center ">
                   <h1 className="text-[30px] md:text-[48px] font-irish text-center text-[#F6A700]">Formulario para convertirte en voluntario</h1>
 
@@ -18,9 +18,7 @@ export default function Voluntarios() {
                       para nuestras necesidades, te pedimos que completes este formulario de manera honesta y detallada.
                   </p>           
               </div>
-              <Formulario>
-
-              </Formulario>
+              <Formulario/>
           </div>
 
       </FondoIconos>

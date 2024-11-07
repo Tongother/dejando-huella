@@ -129,7 +129,7 @@ export default function Perritos() {
 
     return (
         <>
-            <BannerAdopciones tipo="Perritos"/>
+            <BannerAdopciones tipo="perritos"/>
             <MascotasDisponibles mascotas={mascotas} />
             <HogarTemporal />
         </>
