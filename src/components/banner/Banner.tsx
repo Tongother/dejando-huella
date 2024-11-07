@@ -10,7 +10,7 @@ const Banner = () => {
           <h1 className='text-center'>¡Ayúdanos desde cerquita!</h1>
           <p className='text-lg'><a className='text-white underline'>Conoce el proceso de voluntariado</a></p>
         </div>
-        <Link href="/voluntarios" className="btnHover bg-[#FFB602] text-white lg:w-[250px] text-center no-underline font-bold text-xl rounded-[40px] p-[25px] font-ruby">
+        <Link href="/dh/voluntarios" className="btnHover bg-[#FFB602] text-white lg:w-[250px] text-center no-underline font-bold text-xl rounded-[40px] p-[25px] font-ruby">
           Conocer más
         </Link>
       </section>
@@ -19,7 +19,7 @@ const Banner = () => {
           <h1>¡Ayúdanos desde cerquita!</h1>
           <p className='text-base'><a className='text-white underline'>Conoce el proceso de voluntariado</a></p>
         </div>
-        <Link href="/voluntarios" className="btnHover bg-[#FFB602] text-white text-center no-underline font-bold text-lg rounded-[40px] px-8 py-3">
+        <Link href="/dh/voluntarios" className="btnHover bg-[#FFB602] text-white text-center no-underline font-bold text-lg rounded-[40px] px-8 py-3">
           Conocer más
         </Link>
       </section>
