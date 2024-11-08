@@ -20,14 +20,7 @@ export default function Voluntarios() {
               </div>
               <Formulario/>
           </div>
-
       </FondoIconos>
-
-    
-
-
-
-     
     </>
   );
 }
