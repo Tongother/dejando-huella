@@ -26,7 +26,7 @@ export const Identificacion = ({ mascota, botonNaranja = false }: Identificacion
                 </div>
 
                 <div className="h-[100px] w-[100px] md:w-[200px] md:h-[200px] rounded-lg relative">
-                    <Image className="rounded-lg w-full h-full overflow-hidden" src={mascota.imagen} alt="Neon" fill sizes="200px" />
+                    <Image className="rounded-lg w-full h-full overflow-hidden" src={mascota.imagen} alt="Perrito en adopción" fill sizes="200px" />
                     <button className={`font-luckiest absolute -bottom-3 left-1/2 transform -translate-x-1/2 ${botonNaranja ? "bg-[#F6A700]" : "bg-[#4C62D9]"} uppercase text-slate-200 px-4 py-2 rounded-lg md:w-3/4 transition-transform duration-100 hover:scale-110`}>
                         Adóptame
                     </button>
