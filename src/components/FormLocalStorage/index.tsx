@@ -10,12 +10,8 @@ interface FormLocalStorageProps {
     tamano: number,
     adoptado: boolean,
 }
-interface idEditType {
-	idEdit: number;
-}
 
-export default function FormLocalStorage( props: idEditType) {
-	const {idEdit} = props;
+export default function FormLocalStorage( {id}: {id: number} ) {
 	const [values, setValues] = useState<FormLocalStorageProps>({	
 		especie: 0,
 		nombre: '',
