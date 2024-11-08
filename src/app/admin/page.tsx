@@ -17,7 +17,7 @@ export default async function Admin () {
         <div className="w-[100vw] h-[100vh] flex justify-center items-center">
             {/* <Lista pets={mascotas as any} /> */}
             {/* <FormularioPerros /> */}
-            <FormLocalStorage id=1/>
+            <FormLocalStorage id={1}/>
         </div>
     )
 }
