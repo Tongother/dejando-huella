@@ -1,4 +1,3 @@
-import { FormularioPerros } from "@/components/admin/Formulario";
 import FormLocalStorage from "../FormLocalStorage";
 import type { InferGetServerSidePropsType, GetServerSideProps } from 'next'
 import Lista from "@/components/admin/Lista";
