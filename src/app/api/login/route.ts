@@ -15,8 +15,8 @@ export async function GET() {
 
 export async function POST(req: Request) {
 	const { username, password }: { username: string; password: string } = await req.json();
-	let token = '';
-	let sql =  await connectionDb();
+	//let token = '';
+	const sql =  await connectionDb();
 
 	//Conectar a la base de datos
 	try {
@@ -70,6 +70,8 @@ export async function POST(req: Request) {
 			status: 500,
 			headers: { 'Content-Type': 'application/json' }
 		});
+	}finally{
+		await sql.end();
 	}
 
 	// Comparar contraseñas: bcrypt-ts
@@ -88,6 +90,8 @@ export async function POST(req: Request) {
 			status: 500,
 			headers: { 'Content-Type': 'application/json' }
 		});
+	}finally{
+		await sql.end();
 	}
 
 	// Crear token: jose

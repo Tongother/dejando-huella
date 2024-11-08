@@ -3,7 +3,7 @@ import type { NextRequest } from 'next/server'
 
 
 export async function middleware(request: NextRequest){
-    // let auth = request.cookies.has('userToken');
+    // const auth = request.cookies.has('userToken');
     // if (request.nextUrl.pathname.startsWith('/login') && auth){
     //     return NextResponse.redirect(new URL('/admin', request.url))
     // }
