@@ -7,7 +7,6 @@ export default function PaginaPrincipal ({mascotas}: InferGetServerSidePropsType
     // const HandleCookie = await cookies()
     // const userCookie = HandleCookie.get('userToken');
     // const username = userCookie?.value
-
     return (
         <div className="flex flex-col items-center flex-auto min-w-screen min-h-screen">
             <Lista pets={mascotas}></Lista>

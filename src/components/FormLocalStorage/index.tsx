@@ -11,7 +11,9 @@ interface FormLocalStorageProps {
     adoptado: boolean,
 }
 
-export default function FormLocalStorage( {id}: {id: number} ) {
+export default function FormLocalStorage( {idEdit}: {idEdit: number} ) {
+
+	//TODO: Verificar y probar cambios de valores de los inputs.
 	const [values, setValues] = useState<FormLocalStorageProps>({	
 		especie: 0,
 		nombre: '',
@@ -48,7 +50,7 @@ export default function FormLocalStorage( {id}: {id: number} ) {
 			<label className="mb-2 font-ini text-center text-[14px] text-[#333]" htmlFor="nombre">Nombre</label>
 			<input className="p-3 mb-5 text-base border-solid border-[1px] border-[#ccc] rounded-md" id="nombre" name="nombre" onChange={HandleChange} type="text" value={values.nombre}/>
 
-			<label className="my-2font-ini text-center text-[14px] text-[#333]" htmlFor="edad">Edad</label>
+			<label className="my-2font-ini text-center text-[14px] text-[#333]" htmlFor="edad">Edad en años</label>
 			<div className="flex gap-1 items-center mb-3">
 				<output className="font-ini font-semibold bg-[#F6A700] text-white px-3 py-1 rounded-full">{values.edad}</output>
 				<input className="w-full" id="edad" onChange={HandleChange} type="range" value={values.edad} min="0" max="25"/>
