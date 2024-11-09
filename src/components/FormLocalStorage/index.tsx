@@ -2,6 +2,7 @@
 import { FormEvent, useState, ChangeEvent } from "react";
 import { postPerros } from "./formLocalStorage";
 interface FormLocalStorageProps {
+	idEdit: number | undefined;
 	especie: number | undefined,
     nombre: string | undefined,
     edad: number | undefined,
@@ -15,6 +16,7 @@ export default function FormLocalStorage( {idEdit}: {idEdit: number} ) {
 
 	//TODO: Verificar y probar cambios de valores de los inputs.
 	const [values, setValues] = useState<FormLocalStorageProps>({	
+		idEdit: 0,
 		especie: 0,
 		nombre: '',
 		edad:0,
@@ -23,7 +25,12 @@ export default function FormLocalStorage( {idEdit}: {idEdit: number} ) {
 		tamano: 0,
 		adoptado: false,
 	});
-
+	if(idEdit){
+		setValues({
+			...values,
+			idEdit
+		});
+	}
 	const HandleChange = (event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>) => {
 		const { id, value } = event.target;
 		setValues((prevData) => ({
@@ -84,6 +91,7 @@ export default function FormLocalStorage( {idEdit}: {idEdit: number} ) {
 					</select>
 				</div>
 			}
+			
 			<button className="p-[10px] bg-[#F6A700] text-white border-none rounded-md cursor-pointer mb-[10px]" type="submit">Registrar</button>
 			<button className="p-[10px] bg-[#f62d00] text-white border-none rounded-md cursor-pointer mb-[10px]" onClick={HandleCancel}>Cancelar</button>
 		</form>
