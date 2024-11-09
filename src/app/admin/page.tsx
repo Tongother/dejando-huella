@@ -12,7 +12,7 @@ export default async function Admin() {
 
     return (
         <div className="flex flex-col items-center justify-center flex-auto min-w-screen min-h-screen p-10 gap-10">
-            <Lista pets={mascotas}></Lista>
+            <Lista pets={mascotas}/>
             <FormLocalStorage idEdit={1} />
         </div>
     )

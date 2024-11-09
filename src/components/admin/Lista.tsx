@@ -28,7 +28,7 @@ export const Lista = ({ pets }: ListaProps) => {
                     <svg className="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <path clipRule="evenodd" fillRule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" />
                     </svg>
-                    Agregar producto
+                    Agregar Mascota
                 </button>
             </div>
             <div className="relative overflow-x-auto">
@@ -90,7 +90,7 @@ export const Lista = ({ pets }: ListaProps) => {
 
                     ) : (
                         <tbody className="flex items-center justify-center h-24 text-center font-bold text-xl bg-gray-100 text-gray-700">
-                            <tr><td>No hay mascotass</td></tr>
+                            <tr><td>No hay mascotas</td></tr>
                         </tbody>
                     )}
                 </table>
