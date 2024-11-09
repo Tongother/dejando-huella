@@ -12,6 +12,7 @@ export default function Login() {
 	const [userData, setUserData] = useState<userDataType>({username:null,password:null});
 	const [alert, setAlert] = useState<null | String>(null);
 
+	//TODO: Inicializar el estado de userData con los valores del input de usuario y contraseña que pueden estar autorrellenados.
 	function HandlerOnChange(event: React.ChangeEvent<HTMLInputElement>) {
 		const value = event.target.value;
 		setUserData({

@@ -6,7 +6,7 @@ interface userDataType {
 }
 export const loginServer = async (user:userDataType) => {
     try {
-        const response = await axios.post(`api/login`, user);
+        const response = await axios.post(`../api/login`, user);
         const status = response.data.status;
         return status;
     } catch (error:any) {
