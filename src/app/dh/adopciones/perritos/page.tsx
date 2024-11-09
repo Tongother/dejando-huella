@@ -12,13 +12,13 @@ export default async function Perritos() {
         });
 
         if (!res.ok) {
-            throw new Error("Failed to fetch mascotas");
+            throw new Error("Error al obtener mascotas");
         }
 
         mascotas = await res.json();
 
     } catch (error) {
-        console.error("Error fetching mascotas:", error);
+        console.error("Error obteniendo mascotas:", error);
     }
 
     return (

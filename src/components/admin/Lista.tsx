@@ -11,6 +11,7 @@ interface petDataType {
     personalidad: string | null,
     tamanio: string | null,
     adoptado: boolean,
+    imagen: string | null,
 }
 
 interface ListaProps {
@@ -19,10 +20,6 @@ interface ListaProps {
 
 export const Lista = ({ pets }: ListaProps) => {
     const [mascotas, setMascotas] = useState<Array<petDataType>>(pets);
-
-    const handleEdit = (id: number) => {
-        window.location.href = `/admin/editar/${id}`;
-    }
     
     return (
         <div className="bg-gray-100 relative shadow-md sm:rounded-lg overflow-hidden pt-5 flex flex-col">
