@@ -1,7 +1,7 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import connectionDb from '../../../../../database/config';
 
-export async function GET(req: NextRequest) {
+export async function GET() {
     const sql = await connectionDb();
     try {
         const result = await sql`SELECT personalidad FROM personalidades`;

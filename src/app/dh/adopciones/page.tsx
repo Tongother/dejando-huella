@@ -1,11 +1,12 @@
 import HogarTemporal from "@/components/adopciones/hogar_temporal";
 import FondoIconos from "@/components/items/banner";
 import BotonSeleccion from "@/components/adopciones/seleccion";
-import La_chona from "@/app/../../public/perritos/La_chona.png";
+import La_chona from "@/app/../../public/perritos/La_Chona.png";
 import Minnie from "@/app/../../public/gatitos/Minnie.png";
 import VoluntariosBanner from "@/components/adopciones/voluntarios";
 
 export default async function Adopciones() {
+  
   return (
     <>
       <FondoIconos>

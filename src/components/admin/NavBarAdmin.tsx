@@ -31,7 +31,7 @@ const NavBarAdmin = () => {
             }}
             variants={{
                 abierto: {
-                    width: 350,
+                    width: 400,
                     height: "auto",
                 },
                 cerrado: {
@@ -102,7 +102,7 @@ const NavBarAdmin = () => {
                 <hr className="border-[#192a52]"/>
                 <div className="flex-1 flex flex-col gap-4 mt-6 overflow-y-auto cajaBotones">
                     <ElementoDeNav texto="Inicio" ruta="/admin" icono="/admin/hogar.png" open={open} hover={hover}/>
-                    <ElementoDeNav texto="Lista de animalitos" ruta="/admin" icono="/admin/dog.svg" open={open} hover={hover}/>
+                    <ElementoDeNav texto="Lista de animalitos" ruta="/admin/list" icono="/admin/dog.svg" open={open} hover={hover}/>
                 </div>
             </motion.nav>
         </>
