@@ -1,6 +1,7 @@
 import axios from "axios";
 
 interface petDataType{
+    idEdit: number | undefined,
     especie: number | undefined,
     nombre: string | undefined,
     edad: number | undefined,
@@ -9,14 +10,18 @@ interface petDataType{
     tamano: number,
     adoptado: boolean,
 }
-export const postPerros =(pet:petDataType) => {
+export const postPerros =async (pet:petDataType) => {
     try {
-        // const response = await axios.post(`api/crud`, pet);
-        // const status = response.data.status;
-        // return status;
-        console.log("fi: ",pet);
-        return 200;
-    } catch (error:any) {
+        const {idEdit,especie,nombre,edad,sexo,personalidad,tamano,adoptado} = pet;
+        let res
+        if(!idEdit){
+            res = await axios.post(`api/insert`, pet); 
+        }else{
+            res = await axios.post(`api/insert`, pet);
+        }
+        const status = res.data.status;
+        return status;
+        } catch (error:any) {
         console.log("Error: ",error);
         return error.response.data.status;
     }

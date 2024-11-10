@@ -16,8 +16,8 @@ export async function GET() {
 export async function POST(req: Request) {
 	const { username, password }: { username: string; password: string } = await req.json();
 	//let token = '';
+	console.log("first", username, password);
 	const sql =  await connectionDb();
-
 	//Conectar a la base de datos
 	try {
 	} catch (error: any) {
@@ -66,17 +66,18 @@ export async function POST(req: Request) {
 			});
 		}
 	} catch (error: any) {
+		await sql.end();
 		return new Response(JSON.stringify({ message: 'No se pudo encontrar el usuario',error, status: 500 }), {
 			status: 500,
 			headers: { 'Content-Type': 'application/json' }
 		});
-	}finally{
-		await sql.end();
 	}
 
 	// Comparar contraseñas: bcrypt-ts
 	try {
-		const result = await sql`SELECT password FROM administradores WHERE LOWER(username) = LOWER(${username});`;
+		console.log("dasd");
+		const result = await sql`SELECT password FROM administradores WHERE username = LOWER(${username});`;
+		console.log("eq");
 		const truePassword = result[0].password;
 		const verifyPassword = compareSync(password, truePassword);
 		if (!verifyPassword) {

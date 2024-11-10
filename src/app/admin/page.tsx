@@ -1,14 +1,19 @@
-import PaginaPrincipal from "@/components/admin/PaginaPrincipal"
-export default function Admin () {
+import FormLocalStorage from "../../components/FormLocalStorage";
+import Lista from "@/components/admin/Lista";
+
+export default async function Admin() {
     // const HandleCookie = await cookies()
     // const userCookie = HandleCookie.get('userToken');
     // const username = userCookie?.value
+    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/perros`, {
+        cache: "no-store",
+    });
+    const mascotas = await res.json();
 
     return (
-        <div className="w-[100vw] h-[100vh] flex justify-center items-center">
-            <PaginaPrincipal />
-            {/* <Lista pets={mascotas as any} /> */}
-            {/* <FormularioPerros /> */}
+        <div className="flex flex-col items-center justify-center flex-auto min-w-screen min-h-screen p-10 gap-10">
+            <Lista pets={mascotas}/>
+            <FormLocalStorage idEdit={1} />
         </div>
     )
 }

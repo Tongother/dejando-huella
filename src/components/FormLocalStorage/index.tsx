@@ -2,6 +2,7 @@
 import { FormEvent, useState, ChangeEvent } from "react";
 import { postPerros } from "./formLocalStorage";
 interface FormLocalStorageProps {
+	idEdit: number | undefined;
 	especie: number | undefined,
     nombre: string | undefined,
     edad: number | undefined,
@@ -11,8 +12,11 @@ interface FormLocalStorageProps {
     adoptado: boolean,
 }
 
-export default function FormLocalStorage( {id}: {id: number} ) {
+export default function FormLocalStorage( {idEdit}: {idEdit: number} ) {
+
+	//TODO: Verificar y probar cambios de valores de los inputs.
 	const [values, setValues] = useState<FormLocalStorageProps>({	
+		idEdit: 0,
 		especie: 0,
 		nombre: '',
 		edad:0,
@@ -21,7 +25,12 @@ export default function FormLocalStorage( {id}: {id: number} ) {
 		tamano: 0,
 		adoptado: false,
 	});
-
+	if(idEdit){
+		setValues({
+			...values,
+			idEdit
+		});
+	}
 	const HandleChange = (event: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>) => {
 		const { id, value } = event.target;
 		setValues((prevData) => ({
@@ -48,7 +57,7 @@ export default function FormLocalStorage( {id}: {id: number} ) {
 			<label className="mb-2 font-ini text-center text-[14px] text-[#333]" htmlFor="nombre">Nombre</label>
 			<input className="p-3 mb-5 text-base border-solid border-[1px] border-[#ccc] rounded-md" id="nombre" name="nombre" onChange={HandleChange} type="text" value={values.nombre}/>
 
-			<label className="my-2font-ini text-center text-[14px] text-[#333]" htmlFor="edad">Edad</label>
+			<label className="my-2font-ini text-center text-[14px] text-[#333]" htmlFor="edad">Edad en años</label>
 			<div className="flex gap-1 items-center mb-3">
 				<output className="font-ini font-semibold bg-[#F6A700] text-white px-3 py-1 rounded-full">{values.edad}</output>
 				<input className="w-full" id="edad" onChange={HandleChange} type="range" value={values.edad} min="0" max="25"/>
@@ -82,6 +91,7 @@ export default function FormLocalStorage( {id}: {id: number} ) {
 					</select>
 				</div>
 			}
+			
 			<button className="p-[10px] bg-[#F6A700] text-white border-none rounded-md cursor-pointer mb-[10px]" type="submit">Registrar</button>
 			<button className="p-[10px] bg-[#f62d00] text-white border-none rounded-md cursor-pointer mb-[10px]" onClick={HandleCancel}>Cancelar</button>
 		</form>
