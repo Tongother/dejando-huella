@@ -1,5 +1,5 @@
 //import { SignJWT } from 'jose';
-import { compareSync,genSaltSync,hashSync } from "bcrypt-ts";
+import { compareSync } from "bcrypt-ts";
 import { cookies } from 'next/headers';
 import connectionDb from "../../../../database/config";
 
@@ -20,7 +20,7 @@ export async function POST(req: Request) {
 	const sql =  await connectionDb();
 	//Conectar a la base de datos
 	try {
-	} catch (error: any) {
+	} catch (error: unknown) {
 		return new Response(JSON.stringify({ message:'Error al conectar a la base de datos', error, status: 500 }), {
 			status: 500,
 			headers: { 'Content-Type': 'application/json' }
@@ -49,7 +49,7 @@ export async function POST(req: Request) {
 				}
 			}
 		}
-	} catch (error: any) {
+	} catch (error: unknown) {
 		return new Response(JSON.stringify({ message: 'Error al validar la sesión activa',error, status: 500 }), {
 			status: 500,
 			headers: { 'Content-Type': 'application/json' }
@@ -65,7 +65,7 @@ export async function POST(req: Request) {
 				headers: { 'Content-Type': 'application/json' }
 			});
 		}
-	} catch (error: any) {
+	} catch (error: unknown) {
 		await sql.end();
 		return new Response(JSON.stringify({ message: 'No se pudo encontrar el usuario',error, status: 500 }), {
 			status: 500,
@@ -86,7 +86,7 @@ export async function POST(req: Request) {
 				headers: { 'Content-Type': 'application/json' }
 			});
 		}
-	} catch (error: any) {
+	} catch (error: unknown) {
 		return new Response(JSON.stringify({ message: 'Error al validar contraseña',error, status: 500 }), {
 			status: 500,
 			headers: { 'Content-Type': 'application/json' }
@@ -119,7 +119,7 @@ export async function POST(req: Request) {
 			secure: process.env.NODE_ENV === 'production',
 			sameSite: 'strict',
 		});
-	} catch (error: any) {
+	} catch (error: unknown) {
 		return new Response(JSON.stringify({ message: 'Error al crear cookie',error, status: 500 }), {
 			status: 500,
 			headers: { 'Content-Type': 'application/json' }

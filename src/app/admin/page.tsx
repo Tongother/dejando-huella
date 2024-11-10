@@ -1,5 +1,4 @@
 import FormPets from "../../components/formPets/FormPets";
-import Lista from "@/components/admin/Lista";
 
 export default async function Admin() {
     // const HandleCookie = await cookies()

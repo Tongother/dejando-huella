@@ -3,7 +3,7 @@
 import { useState } from "react";
 
 export default function Cloudinary() {
-    const [file, setFile] = useState(null) as any;
+    const [file, setFile] = useState<File | string>("");
 
     return (
         <div>
@@ -23,7 +23,13 @@ export default function Cloudinary() {
                 const data = await response.json();
                 console.log(data);
             }}>
-                <input type="file" onChange={(e: any) => setFile(e.target.files[0])}
+                <input type="file" onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                    if (e.target.files === null) {
+                        console.log("No se ha seleccionado un archivo.");
+                        return;
+                    }
+                    setFile(e.target.files[0])
+                }}
                 />
                 <button type="submit">Subir imagen</button>
             </form>

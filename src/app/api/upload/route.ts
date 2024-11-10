@@ -10,13 +10,13 @@ cloudinary.config({
   api_secret: process.env.CLOUDINARY_API_SECRET
 });
 
-export const POST = async (req: any) => {
+export const POST = async (req: Request) => {
   console.log(req.body);
   const data = await req.formData();
 
   const image = await data.get("image");
 
-  if (!image) {
+  if (!image || !(image instanceof File)) {
     return NextResponse.json({ error: "No se ha subido ninguna imagen" }, { status: 400 });
   }
 
@@ -35,5 +35,4 @@ export const POST = async (req: any) => {
   console.log(response);
 
   return NextResponse.json({ url: response.secure_url });
-  
 }

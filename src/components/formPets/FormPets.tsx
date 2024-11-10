@@ -1,7 +1,6 @@
 'use client';
-import { FormEvent, useState, ChangeEvent, useEffect, use } from "react";
+import React, { FormEvent, useState, ChangeEvent, useEffect } from "react";
 import axios from "axios";
-import { div } from "framer-motion/client";
 interface FormProps {
 	idEdit: number | null,
 	especie: number | null,
@@ -13,21 +12,21 @@ interface FormProps {
 	adoptado: boolean,
 }
 
-interface FormEditProps {
-	nombre: string,
-	edad: number,
-	sexo: number,
-	personalidad: number,
-	tamano: number | null,
-	adoptado: boolean,
-}
+// interface FormEditProps {
+// 	nombre: string,
+// 	edad: number,
+// 	sexo: number,
+// 	personalidad: number,
+// 	tamano: number | null,
+// 	adoptado: boolean,
+// }
 
 //TODO: Agregar la lógica para insertar y actualizar imágenes.
 
 export default function FormLocalStorage({ idEdit, especie }: { idEdit: number | null; especie: number | null; }) {
 	const [isMounted, setIsMounted] = useState(false);
 	const [alert, setAlert] = useState<boolean>(false);
-	const [values, setValues] = useState<FormProps | FormEditProps>({
+	const [values, setValues] = useState<FormProps>({
 		idEdit: idEdit,
 		especie: idEdit === null ? 1 : especie,
 		nombre: null,
@@ -48,7 +47,7 @@ export default function FormLocalStorage({ idEdit, especie }: { idEdit: number |
 	useEffect(() => {
 		async function getEditData() {
 			if (idEdit === null) return
-			let res = await axios.get(`api/getPet/${especie}/${idEdit}`);
+			const res = await axios.get(`api/getPet/${especie}/${idEdit}`);
 			setValues(res.data)
 		}
 		getEditData()
@@ -62,8 +61,8 @@ export default function FormLocalStorage({ idEdit, especie }: { idEdit: number |
 		}
 		async function editPet() {
 			if (idEdit === null) return
-			let res: any = axios.put('/api/editPet/', values)
-			console.log(res.data)
+			const res = axios.put('/api/editPet/', values)
+			console.log(res)
 		}
 		editPet()
 	}, [update])
@@ -82,8 +81,8 @@ export default function FormLocalStorage({ idEdit, especie }: { idEdit: number |
 					}
 				});
 				console.log('Respuesta:', response.data);
-			} catch (error: any) {
-				console.error('Error en la petición:', error.response ? error.response.data : error.message);
+			} catch (error: unknown) {
+				console.error('Error en la petición:', error);
 			}
 		}
 		insertPet()
@@ -98,7 +97,7 @@ export default function FormLocalStorage({ idEdit, especie }: { idEdit: number |
 		));
 	};
 
-	const handleCheckboxChange = (event: any) => {
+	const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		setValues((prevData) => ({
 			...prevData,
 			adoptado: event.target.checked
@@ -109,7 +108,7 @@ export default function FormLocalStorage({ idEdit, especie }: { idEdit: number |
 	const HandleSubmit = (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 		if (especie === 1) {
-			let { nombre, edad, sexo, personalidad, tamano, adoptado } = values;
+			const { nombre, edad, sexo, personalidad, tamano, adoptado } = values;
 			if (!nombre || !edad || !sexo || !personalidad || !tamano || !adoptado) {
 				setAlert(true);
 				setTimeout(() => {
@@ -118,7 +117,7 @@ export default function FormLocalStorage({ idEdit, especie }: { idEdit: number |
 				return;
 			}
 		} else {
-			let { nombre, edad, sexo, personalidad, adoptado } = values;
+			const { nombre, edad, sexo, personalidad, adoptado } = values;
 			if (!nombre || !edad || !sexo || !personalidad || !adoptado) {
 				setAlert(true);
 				setTimeout(() => {
@@ -135,8 +134,7 @@ export default function FormLocalStorage({ idEdit, especie }: { idEdit: number |
 		window.location.reload();
 	};
 
-	const HandleCancel = (event: any) => {
-		event.preventDefault();
+	const HandleCancel = () => {
 		window.location.reload();
 	};
 
