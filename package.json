@@ -9,12 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@mercadopago/sdk-react": "^0.0.19",
     "@neondatabase/serverless": "^0.10.1",
     "@types/mercadopago": "^1.5.11",
     "axios": "^1.7.7",
     "bcrypt-ts": "^5.0.2",
     "cloudinary": "^2.5.1",
     "cookie": "^1.0.1",
+    "cors": "^2.8.5",
     "framer-motion": "^11.11.11",
     "jose": "^5.9.6",
     "js-cookie": "^3.0.5",
