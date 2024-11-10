@@ -31,7 +31,7 @@ const NavBarAdmin = () => {
             }}
             variants={{
                 abierto: {
-                    width: 350,
+                    width: 400,
                     height: "auto",
                 },
                 cerrado: {

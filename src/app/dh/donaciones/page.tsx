@@ -11,9 +11,9 @@ export default function () {
   return <section>
     <Carrusel />
     
-    <article className="flex w-full aspect-[16/8] relative">
+    {/* <article className="flex w-full aspect-[16/8] relative">
       <Image src={"/banner.png"} alt={"banner"} fill></Image>
-    </article>
+    </article> */}
 
     <article className=" w-full p-5 flex flex-col items-center lg:py-9 lg:px-5 lg:bg-[#F6F6FF]">
       <h1 className="font-ramm text-[#4C62D8] text-2xl lg:text-6xl">Donaciones</h1>

@@ -9,8 +9,8 @@ export default function PaginaPrincipal ({mascotas}: InferGetServerSidePropsType
 
     return (
         <div className="flex flex-col items-center flex-auto min-w-screen min-h-screen">
-            <Lista pets={mascotas}></Lista>
-            <FormLocalStorage idEdit={1}/>
+            {/* <Lista pets={mascotas} /> */}
+            <FormLocalStorage id={1}/>
         </div>
     )
 }
@@ -19,6 +19,7 @@ export const getServerSideProps = (async () => {
     const response = await fetch('http://localhost:3000/api/mascotas');
     const data = await response.json();
     const mascotas = data;
+    console.log(mascotas)
 
     return { 
         props: mascotas 
