@@ -10,8 +10,8 @@ export async function middleware(){
     // if (request.nextUrl.pathname.startsWith('/admin') && !auth){
     //     return NextResponse.redirect(new URL('/login', request.url))
     // }
-    if(request.nextUrl.pathname === '/admin/formPets'){
-        return NextResponse.redirect(new URL('/admin/formPets/0/0', request.url))
-    }
+    // if(request.nextUrl.pathname === '/admin/formPets'){
+    //     return NextResponse.redirect(new URL('/admin/formPets/0/0', request.url))
+    // }
     return NextResponse.next()
 }

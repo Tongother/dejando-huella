@@ -3,7 +3,7 @@ import Image from "next/image";
 const Banner = () => {
     return(
         <section className="relative w-full h-64 md:h-96 lg:h-screen font-rancho">
-            <Image src="/contacto/perritos_banner.png" alt="breadcrumb" fill />
+            <Image src="/contacto/altar_perritos.jpeg" alt="breadcrumb" fill quality={100}/>
             <div className="absolute right-0 w-full md:w-[50%] h-full flex justify-center items-center bg-white opacity-50 md:opacity-30 z-10"/>
             <div className="absolute right-0 w-full md:w-[50%] h-full flex justify-center items-center z-10">
                 <div className="w-[80%] h-[80%] flex flex-col justify-center items-center gap-8">
