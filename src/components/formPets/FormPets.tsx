@@ -1,55 +1,58 @@
 'use client';
+import Link from "next/link";
 import { FormEvent, useState, ChangeEvent, useEffect, use } from "react";
 import axios from "axios";
-import { div } from "framer-motion/client";
 interface FormProps {
 	idEdit: number | null,
-	especie: number | null,
+	id_especie: number | null,
 	nombre: string | null,
 	edad: number | null,
-	sexo: number | null,
-	personalidad: number | null,
-	tamano: number | null,
-	adoptado: boolean,
-}
-
-interface FormEditProps {
-	nombre: string,
-	edad: number,
-	sexo: number,
-	personalidad: number,
-	tamano: number | null,
+	id_sexo: number | null,
+	id_personalidad: number | null,
+	id_tamano: number | null,
 	adoptado: boolean,
 }
 
 //TODO: Agregar la lógica para insertar y actualizar imágenes.
 
-export default function FormLocalStorage({ idEdit, especie }: { idEdit: number | null; especie: number | null; }) {
+export default function FormPets({ idEdit, especie }: { idEdit: number | null; especie: number | null; }) {
 	const [isMounted, setIsMounted] = useState(false);
 	const [alert, setAlert] = useState<boolean>(false);
-	const [values, setValues] = useState<FormProps | FormEditProps>({
+	const [valueAlert, setValueAlert] = useState<string>('');
+	const [values, setValues] = useState<FormProps>({
 		idEdit: idEdit,
-		especie: idEdit === null ? 1 : especie,
+		id_especie: especie,
 		nombre: null,
-		edad: null,
-		sexo: null,
-		personalidad: null,
-		tamano: null,
+		edad: 0,
+		id_sexo: null,
+		id_personalidad: null,
+		id_tamano: null,
 		adoptado: false,
 	});
 	const [insert, setInsert] = useState<boolean>(false);
 	const [update, setUpdate] = useState<boolean>(false);
 
 	useEffect(() => {
-		console.log(values)
+		console.log("Values actual: " ,values)
 	}, [values])
 
 	//Si se llamó a la función con un idEdit, se obtienen los datos del peludito a editar
 	useEffect(() => {
 		async function getEditData() {
 			if (idEdit === null) return
-			let res = await axios.get(`api/getPet/${especie}/${idEdit}`);
-			setValues(res.data)
+			const res = await axios.get(`/api/getPet/${idEdit}/${especie}`);
+			if(res.data.status != 200){
+				setValueAlert('No se encontró el peludito');
+				setAlert(true);
+				setTimeout(() => {
+					window.location.href='/admin/list';
+				}, 2000);
+				return;
+			}
+			setValues((values) => ({
+				...values,
+				...res.data.result[0]
+			}));
 		}
 		getEditData()
 	}, [])
@@ -62,8 +65,14 @@ export default function FormLocalStorage({ idEdit, especie }: { idEdit: number |
 		}
 		async function editPet() {
 			if (idEdit === null) return
-			let res: any = axios.put('/api/editPet/', values)
-			console.log(res.data)
+			let res = await axios.put('/api/updatePet/', values);
+			if(res.data.status === 200){
+				setValueAlert('Edición exitosa');
+				setAlert(true);
+				setTimeout(() => {
+					window.location.href='/admin/list';
+				}, 2000);
+			}
 		}
 		editPet()
 	}, [update])
@@ -81,7 +90,13 @@ export default function FormLocalStorage({ idEdit, especie }: { idEdit: number |
 						'Content-Type': 'application/json',
 					}
 				});
-				console.log('Respuesta:', response.data);
+				if(response.data.status === 200){
+					setValueAlert('Registro exitoso');
+					setAlert(true);
+					setTimeout(() => {
+						window.location.href='/admin/list';
+					}, 2000);
+				}
 			} catch (error: any) {
 				console.error('Error en la petición:', error.response ? error.response.data : error.message);
 			}
@@ -108,9 +123,10 @@ export default function FormLocalStorage({ idEdit, especie }: { idEdit: number |
 
 	const HandleSubmit = (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
-		if (especie === 1) {
-			let { nombre, edad, sexo, personalidad, tamano, adoptado } = values;
-			if (!nombre || !edad || !sexo || !personalidad || !tamano || !adoptado) {
+		if (values.id_especie === 1) {
+			let { nombre, edad, id_sexo, id_personalidad, id_tamano} = values;
+			if (!nombre || !edad || !id_sexo || !id_personalidad || !id_tamano) {
+				setValueAlert('Completa todos los campos del formulario');
 				setAlert(true);
 				setTimeout(() => {
 					setAlert(false);
@@ -118,8 +134,9 @@ export default function FormLocalStorage({ idEdit, especie }: { idEdit: number |
 				return;
 			}
 		} else {
-			let { nombre, edad, sexo, personalidad, adoptado } = values;
-			if (!nombre || !edad || !sexo || !personalidad || !adoptado) {
+			let { nombre, edad, id_sexo, id_personalidad} = values;
+			if (!nombre || !edad || !id_sexo || !id_personalidad) {
+				setValueAlert('Completa todos los campos del formulario');
 				setAlert(true);
 				setTimeout(() => {
 					setAlert(false);
@@ -132,12 +149,12 @@ export default function FormLocalStorage({ idEdit, especie }: { idEdit: number |
 		} else {
 			setUpdate(true);
 		}
-		window.location.reload();
+		
 	};
 
 	const HandleCancel = (event: any) => {
 		event.preventDefault();
-		window.location.reload();
+		window.location.href = '/admin/list';
 	};
 
 	return (
@@ -147,7 +164,7 @@ export default function FormLocalStorage({ idEdit, especie }: { idEdit: number |
 				idEdit === null &&
 				<div className="flex flex-col">
 					<label className="mb-2 font-ini text-center text-[14px] text-[#333]" htmlFor="sexo">Especie</label>
-					<select className="p-3 mb-5 text-base border-solid border-[1px] border-[#ccc] rounded-md" id="especie" name="especie" onChange={HandleChange} value={values.especie || 0} required>
+					<select className="p-3 mb-5 text-base border-solid border-[1px] border-[#ccc] rounded-md" id="id_especie" name="id_especie" onChange={HandleChange} value={values.id_especie || 0} required>
 						<option value={0} disabled>Selecciona el peludito</option>
 						<option value={1}>Perro</option>
 						<option value={2}>Gato</option>
@@ -165,14 +182,14 @@ export default function FormLocalStorage({ idEdit, especie }: { idEdit: number |
 			</div>
 
 			<label className="mb-2 font-ini text-center text-[14px] text-[#333]" htmlFor="sexo">Sexo</label>
-			<select className="p-3 mb-5 text-base border-solid border-[1px] border-[#ccc] rounded-md" id="sexo" name="sexo" onChange={HandleChange} value={values.sexo || 0} required>
+			<select className="p-3 mb-5 text-base border-solid border-[1px] border-[#ccc] rounded-md" id="id_sexo" name="id_sexo" onChange={HandleChange} value={values.id_sexo || 0} required>
 				<option value={0} disabled>Selecciona el Sexo</option>
 				<option value={1}>Macho</option>
 				<option value={2}>Hembra</option>
 			</select>
 
 			<label className="mb-2 font-ini text-center text-[14px] text-[#333]" htmlFor="personalidad">Personalidad</label>
-			<select className="p-3 mb-5 text-base border-solid border-[1px] border-[#ccc] rounded-md" id="personalidad" name="personalidad" onChange={HandleChange} value={values.personalidad || 0} required>
+			<select className="p-3 mb-5 text-base border-solid border-[1px] border-[#ccc] rounded-md" id="id_personalidad" name="id_personalidad" onChange={HandleChange} value={values.id_personalidad || 0} required>
 				<option value={0} disabled>Selecciona la personalidad</option>
 				<option value={1}>Juguetón</option>
 				<option value={2}>Tímido</option>
@@ -181,10 +198,10 @@ export default function FormLocalStorage({ idEdit, especie }: { idEdit: number |
 				<option value={5}>Amoroso</option>
 			</select>
 
-			{values.especie == 1 &&
+			{values.id_especie == 1 &&
 				<div className="flex flex-col">
 					<label className="mb-2 font-ini text-center text-[14px] text-[#333]" htmlFor="tamano">Tamaño</label>
-					<select className="p-3 mb-5 text-base border-solid border-[1px] border-[#ccc] rounded-md" id="tamano" name="tamano" onChange={HandleChange} value={values.tamano || 0} required>
+					<select className="p-3 mb-5 text-base border-solid border-[1px] border-[#ccc] rounded-md" id="id_tamano" name="id_tamano" onChange={HandleChange} value={values.id_tamano || 0} required>
 						<option value={0} disabled>Selecciona el tamaño del perrito</option>
 						<option value={1}>Pequeño</option>
 						<option value={2}>Mediano</option>
@@ -202,10 +219,12 @@ export default function FormLocalStorage({ idEdit, especie }: { idEdit: number |
 				/>
 				Este peludito ya fue adoptado
 			</label>
-			<button className="p-[10px] bg-[#F6A700] text-white border-none rounded-md cursor-pointer mb-[10px]" type="submit">Registrar</button>
-			<button className="p-[10px] bg-[#f62d00] text-white border-none rounded-md cursor-pointer mb-[10px]" onClick={HandleCancel}>Cancelar</button>
+			<button className="p-[10px] bg-[#F6A700] text-white border-none rounded-md cursor-pointer mb-[10px]" type="submit">{idEdit!! ? 'Editar' : 'Insertar'}</button>
+			<Link className="p-[10px] bg-[#f62d00] text-white border-none rounded-md cursor-pointer mb-[10px]" href='/admin/list'>
+				<button className="text-center w-full">Cancelar</button>
+			</Link>
 			{
-				alert && <div className="text-center text-[#f62d00]">Completa todos los datos del formulario</div>
+				alert && <div className="text-center text-[#f62d00]">{valueAlert}</div>
 			}
 		</form>
 	)

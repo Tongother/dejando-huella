@@ -20,6 +20,13 @@ export async function POST(req: Request) {
 	const sql =  await connectionDb();
 	//Conectar a la base de datos
 	try {
+		let result = await sql`SELECT VERSION()`;
+        if(result.count === 0){
+            return new Response(JSON.stringify({ message:'Error al conectar a la base de datos', status: 500 }), {
+                status: 500,
+                headers: { 'Content-Type': 'application/json' }
+            });
+        }
 	} catch (error: any) {
 		return new Response(JSON.stringify({ message:'Error al conectar a la base de datos', error, status: 500 }), {
 			status: 500,
