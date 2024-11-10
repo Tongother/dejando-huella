@@ -1,10 +1,19 @@
 "use client"
 
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect, SetStateAction } from "react";
 import "./filtro.css";
 
+interface Filtros {
+    edad: number,
+    busqueda: string,
+    sexo: string,
+    tamaño: string,
+    personalidad: string,
+  }
+  
+
 interface FiltroProps {
-    setFiltros: (filtros: any) => void;
+    setFiltros: React.Dispatch<SetStateAction<Filtros>>;
 }
 
 type personalidad = {
@@ -22,6 +31,7 @@ export const Filtro = ({ setFiltros }: FiltroProps) => {
     const [position, setPosition] = useState(0);
     const [personalidades, setPersonalidades] = useState<personalidad[]>([]);
 
+    console.log(personalidad, sexo, tamaño, busqueda, edadSlider);
 
     useEffect(() => {
         const getPersonalidades = async () => {
@@ -39,7 +49,7 @@ export const Filtro = ({ setFiltros }: FiltroProps) => {
     const handleEdad = (e: React.ChangeEvent<HTMLInputElement>) => {
         const newEdad = parseInt(e.target.value);
         setEdadSlider(newEdad);
-        setFiltros((prev: any) => ({ ...prev, edad: newEdad }));
+        setFiltros((prev: Filtros) => ({ ...prev, edad: newEdad }));
 
         const rangeWidth = e.target.offsetWidth;
         const thumbWidth = 20;
@@ -70,25 +80,25 @@ export const Filtro = ({ setFiltros }: FiltroProps) => {
     const handleBusqueda = (e: React.ChangeEvent<HTMLInputElement>) => {
         const newBusqueda = e.target.value;
         setBusqueda(newBusqueda);
-        setFiltros((prev: any) => ({ ...prev, busqueda: newBusqueda }));
+        setFiltros((prev: Filtros) => ({ ...prev, busqueda: newBusqueda }));
     };
 
     const handleSexo = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const newSexo = e.target.value;
         setSexo(newSexo);
-        setFiltros((prev: any) => ({ ...prev, sexo: newSexo }));
+        setFiltros((prev: Filtros) => ({ ...prev, sexo: newSexo }));
     };
 
     const handleTamaño = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const newTamaño = e.target.value;
         setTamaño(newTamaño);
-        setFiltros((prev: any) => ({ ...prev, tamaño: newTamaño }));
+        setFiltros((prev: Filtros) => ({ ...prev, tamaño: newTamaño }));
     };
 
     const handlePersonalidad = (e: React.ChangeEvent<HTMLSelectElement>) => {
         const newPersonalidad = e.target.value;
         setPersonalidad(newPersonalidad);
-        setFiltros((prev: any) => ({ ...prev, personalidad: newPersonalidad }));
+        setFiltros((prev: Filtros) => ({ ...prev, personalidad: newPersonalidad }));
     };
 
 

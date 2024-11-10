@@ -10,7 +10,7 @@ interface userDataType {
 
 export default function Login() {
 	const [userData, setUserData] = useState<userDataType>({username:null,password:null});
-	const [alert, setAlert] = useState<null | String>(null);
+	const [alert, setAlert] = useState<null | string>(null);
 
 	//TODO: Inicializar el estado de userData con los valores del input de usuario y contraseña que pueden estar autorrellenados.
 	function HandlerOnChange(event: React.ChangeEvent<HTMLInputElement>) {

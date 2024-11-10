@@ -14,20 +14,20 @@ export const FormularioPerros = () => {
         adoptado: false,
     });
 
-    // const HandleChange = (e:) => {
-	// 	const { name, value } = e.target;
-	// 	setValues((prevData) => (
-	// 		{
-	// 			...prevData,
-	// 			[name]: value
-	// 		}
-	// 	));
-	// };
+    const HandleChange = (e:React.ChangeEvent<HTMLInputElement>) => {
+		const { name, value } = e.target;
+		setValues((prevData) => (
+			{
+				...prevData,
+				[name]: value
+			}
+		));
+	};
     return (
         <form className="flex flex-col w-[500px] p-[20px] border-solid border-black border-[2px] rounded-xl my-[40px] mx-auto" >
             <h1 className="text-center font-ramm text-2xl text-[#F6A700]">LocalStorage</h1>
             <label className="mb-2 font-ini text-center text-[14px] text-[#333]" htmlFor="especie">Especie</label>
-            <input className="p-3 mb-5 text-base border-solid border-[1px] border-[#ccc] rounded-md" id="especie" name="especie" type="text" value={values.especie} />
+            <input className="p-3 mb-5 text-base border-solid border-[1px] border-[#ccc] rounded-md" onChange={HandleChange} id="especie" name="especie" type="text" value={values.especie} />
 
             <label className="mb-2 font-ini text-center text-[14px] text-[#333]" htmlFor="nombre">Nombre</label>
             <input className="p-3 mb-5 text-base border-solid border-[1px] border-[#ccc] rounded-md" id="nombre" name="nombre" type="text" value={values.nombre} />

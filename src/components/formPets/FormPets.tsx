@@ -1,6 +1,6 @@
 'use client';
+import React, { FormEvent, useState, ChangeEvent, useEffect } from "react";
 import Link from "next/link";
-import { FormEvent, useState, ChangeEvent, useEffect, use } from "react";
 import axios from "axios";
 interface FormProps {
 	idEdit: number | null,
@@ -65,7 +65,7 @@ export default function FormPets({ idEdit, especie }: { idEdit: number | null; e
 		}
 		async function editPet() {
 			if (idEdit === null) return
-			let res = await axios.put('/api/updatePet/', values);
+			const res = await axios.put('/api/updatePet/', values);
 			if(res.data.status === 200){
 				setValueAlert('Edición exitosa');
 				setAlert(true);
@@ -97,8 +97,8 @@ export default function FormPets({ idEdit, especie }: { idEdit: number | null; e
 						window.location.href='/admin/list';
 					}, 2000);
 				}
-			} catch (error: any) {
-				console.error('Error en la petición:', error.response ? error.response.data : error.message);
+			} catch (error: unknown) {
+				console.error('Error en la petición:', error);
 			}
 		}
 		insertPet()
@@ -113,7 +113,7 @@ export default function FormPets({ idEdit, especie }: { idEdit: number | null; e
 		));
 	};
 
-	const handleCheckboxChange = (event: any) => {
+	const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 		setValues((prevData) => ({
 			...prevData,
 			adoptado: event.target.checked
@@ -124,7 +124,7 @@ export default function FormPets({ idEdit, especie }: { idEdit: number | null; e
 	const HandleSubmit = (event: FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 		if (values.id_especie === 1) {
-			let { nombre, edad, id_sexo, id_personalidad, id_tamano} = values;
+			const { nombre, edad, id_sexo, id_personalidad, id_tamano} = values;
 			if (!nombre || !edad || !id_sexo || !id_personalidad || !id_tamano) {
 				setValueAlert('Completa todos los campos del formulario');
 				setAlert(true);
@@ -134,7 +134,7 @@ export default function FormPets({ idEdit, especie }: { idEdit: number | null; e
 				return;
 			}
 		} else {
-			let { nombre, edad, id_sexo, id_personalidad} = values;
+			const { nombre, edad, id_sexo, id_personalidad} = values;
 			if (!nombre || !edad || !id_sexo || !id_personalidad) {
 				setValueAlert('Completa todos los campos del formulario');
 				setAlert(true);
@@ -152,10 +152,9 @@ export default function FormPets({ idEdit, especie }: { idEdit: number | null; e
 		
 	};
 
-	const HandleCancel = (event: any) => {
-		event.preventDefault();
-		window.location.href = '/admin/list';
-	};
+	// const HandleCancel = () => {
+	// 	window.location.reload();
+	// };
 
 	return (
 		<form className="flex font-ini flex-col w-[500px] p-[20px] shadow-2xl border-solid border-2 border-slate-200 rounded-xl m-auto" onSubmit={HandleSubmit}>
@@ -219,7 +218,7 @@ export default function FormPets({ idEdit, especie }: { idEdit: number | null; e
 				/>
 				Este peludito ya fue adoptado
 			</label>
-			<button className="p-[10px] bg-[#F6A700] text-white border-none rounded-md cursor-pointer mb-[10px]" type="submit">{idEdit!! ? 'Editar' : 'Insertar'}</button>
+			<button className="p-[10px] bg-[#F6A700] text-white border-none rounded-md cursor-pointer mb-[10px]" type="submit">{idEdit! ? 'Editar' : 'Insertar'}</button>
 			<Link className="p-[10px] bg-[#f62d00] text-white border-none rounded-md cursor-pointer mb-[10px]" href='/admin/list'>
 				<button className="text-center w-full">Cancelar</button>
 			</Link>

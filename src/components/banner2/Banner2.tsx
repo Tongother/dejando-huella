@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import "./Banner2.css";
+import "./banner2.css";
 
 const Banner2 = () => {
   return (
