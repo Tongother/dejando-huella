@@ -6,6 +6,7 @@ import Minnie from "@/app/../../public/gatitos/Minnie.png";
 import VoluntariosBanner from "@/components/adopciones/voluntarios";
 
 export default async function Adopciones() {
+  
   return (
     <>
       <FondoIconos>
