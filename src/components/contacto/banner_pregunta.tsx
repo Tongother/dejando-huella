@@ -26,15 +26,15 @@ const Banner_pregunta = ({pregunta, respuesta, imgURL}:Banner_preguntaProps) => 
             </div>
             <motion.div 
             variants={{
-                hidden: {height: 0, opacity: 0},
+                hidden: { height: 0, opacity: 0},
                 visible: {height: "auto", marginTop: "15px", opacity: 1},
             }}
             initial="hidden"
             animate={mostrarRespuesta ? "visible" : "hidden"}
             transition={{duration: 0.3, ease: "easeInOut"}}>
-                <p className="text-lg md:text-xl">{ respuesta ? respuesta : "" }</p>
+                <p className="text-lg md:text-xl pointer-events-none">{ respuesta ? respuesta : "" }</p>
                 { imgURL && (
-                    <div className="w-full flex justify-center">
+                    <div className="w-full flex justify-center pointer-events-none">
                         <Image src={imgURL} alt="Imagen de referencia" quality={100} width={500} height={500} priority/>
                     </div>
                 )}

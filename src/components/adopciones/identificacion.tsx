@@ -1,7 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 
 type IdentificacionProps = {
     mascota: {
+        id: number;
         imagen: string;
         nombre: string;
         edad: string;
@@ -10,9 +12,10 @@ type IdentificacionProps = {
         tamaño: string;
     },
     botonNaranja: boolean; 
+    especie: number;
 };
 
-export const Identificacion = ({ mascota, botonNaranja = false }: IdentificacionProps) => {
+export const Identificacion = ({ mascota, especie, botonNaranja = false }: IdentificacionProps) => {
     return (
         <div className="h-[200px] w-[300px]  md:h-[300px] md:w-[400px] bg-[#F5F6FF] rounded-lg flex p-5 gap-6 relative sombra">
             <Image className="absolute -z-10 rounded-lg" src="/fondo_credencial.png" alt="Fondo credencial" fill sizes="380px" />
@@ -27,9 +30,9 @@ export const Identificacion = ({ mascota, botonNaranja = false }: Identificacion
 
                 <div className="h-[100px] w-[100px] md:w-[200px] md:h-[200px] rounded-lg relative">
                     <Image className="rounded-lg w-full h-full overflow-hidden" src={mascota.imagen} alt="Perrito en adopción" fill sizes="200px" />
-                    <button className={`font-luckiest absolute -bottom-3 left-1/2 transform -translate-x-1/2 ${botonNaranja ? "bg-[#F6A700]" : "bg-[#4C62D9]"} uppercase text-slate-200 px-4 py-2 rounded-lg md:w-3/4 transition-transform duration-100 hover:scale-110`}>
+                    <Link className={`font-luckiest absolute -bottom-3 left-1/2 transform -translate-x-1/2 ${botonNaranja ? "bg-[#F6A700]" : "bg-[#4C62D9]"} uppercase ${botonNaranja ? "text-white" : "text-slate-200"} px-4 py-2 rounded-lg text-center md:w-3/4 transition-transform duration-100 hover:scale-110`} href={`/dh/adopciones/${mascota.id}/${especie}`}>
                         Adóptame
-                    </button>
+                    </Link>
                 </div>
 
             </div>

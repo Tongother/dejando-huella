@@ -6,19 +6,26 @@ import { useEffect, useRef, useState } from "react";
 // Importaciones de Framer Motion
 import { motion } from "framer-motion";
 
-// Importaciones de imágenes
-import img1 from "@/../public/breadcrumb_1.png";
-import arrow from "@/../public/icons/arrow.png";
+interface CarruselProps {
+  active: number;
+}
 
-const Carrusel: React.FC = () => {
-  const images: string[] = [img1.src, img1.src, img1.src];
+const Carrusel = ({ active }:CarruselProps) => {
+  const images: string[] = ["/breadcrumb_1.png", "/banner.png", "/breadcrumb_1.png"];
   const [tiempoScrollTouch, setTiempoScrollTouch] = useState<NodeJS.Timeout>();
   const intervalRef = useRef<NodeJS.Timeout>();
-  const [scrollPos, setScrollPos] = useState(0);
+  const [scrollPos, setScrollPos] = useState(active);
   const [isTouching, setIsTouching] = useState(false);
   const carruselRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+
+    const carrusel = carruselRef.current;
+    if(carrusel){
+      carruselRef.current?.scrollTo({
+        left: active * carrusel.offsetWidth,
+      });
+    }
     const interval = setInterval(() =>{
       setScrollPos((prev) => prev + 1);
     },4000);
@@ -124,7 +131,7 @@ const Carrusel: React.FC = () => {
           opacity: 0.3,
           cursor: "pointer"
         }} transition={{ duration: 0.3, ease: "easeInOut" }} onClick={() => handleMoveCarrusel("right")}>
-        <Image src={arrow.src} alt="Imagen carrusel" width={50} height={50} className="rotate-180 z-10" priority/>
+        <Image src="/icons/arrow.png" alt="Imagen carrusel" width={50} height={50} className="rotate-180 z-10" priority/>
       </motion.div>
       <motion.div className="hidden lg:flex lg:justify-center lg:items-center absolute h-full left-0 top-0 bg-slate-500 opacity-10 z-30"
         whileHover={{
@@ -132,11 +139,11 @@ const Carrusel: React.FC = () => {
           opacity: 0.3,
           cursor: "pointer"
         }} transition={{ duration: 0.3, ease: "easeInOut" }} onClick={() => handleMoveCarrusel("left")}>
-        <Image src={arrow.src} alt="Imagen carrusel" width={50} height={50} className="z-10" priority/>
+        <Image src="/icons/arrow.png" alt="Imagen carrusel" width={50} height={50} className="z-10" priority/>
       </motion.div>
       <div
         ref={carruselRef}
-        className="relative flex overflow-auto w-full h-60 md:h-[400px] lg:h-[600px] xl:h-[700px] font-ramm"
+        className="relative flex overflow-auto w-full h-60 md:h-[400px] lg:h-[600px] xl:h-[700px] font-itim"
         style={{ scrollbarWidth: "none" }}
         onTouchStart={() => {setIsTouching(true);
           if(intervalRef.current){
@@ -153,7 +160,7 @@ const Carrusel: React.FC = () => {
               <h1 className="h-auto max-w-[15em] md:max-w-max xl:h-[240px] leading-relaxed text-white text-center text-xl xl:text-3xl">
                 Adopta y ayuda a seguir <br className="hidden lg:block"/><span className="text-[#FFB602]">dejando huella</span> en la<br className="hidden lg:block"/> vida de un perrito sin <br className="hidden lg:block" />  hogar.
               </h1>
-              <div className="w-full flex justify-center gap-10">
+              <div className="w-full flex justify-center gap-10 mt-2">
                 <button className="md:w-32 xl:w-44 xl:h-12 bg-[#024BFF] hover:bg-[#0642cd] hover:scale-105 ease-out duration-300 text-white py-2 px-4 rounded-full">
                   Adopta
                 </button>

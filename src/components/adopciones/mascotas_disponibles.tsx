@@ -8,6 +8,7 @@ import sonsin from "../../../public/perritos/sonsin.png";
 
 
 type Mascota = {
+    id: number;
     imagen: string;
     nombre: string;
     edad: string;
@@ -18,9 +19,10 @@ type Mascota = {
 
 interface MascotasDisponiblesProps {
     mascotas: Mascota[];
+    especie: number;
 }
 
-export const MascotasDisponibles = ({ mascotas }: MascotasDisponiblesProps) => {
+export const MascotasDisponibles = ({ mascotas, especie }: MascotasDisponiblesProps) => {
     const [paginaActual, setPaginaActual] = useState<number>(1);
     const [filtros, setFiltros] = useState({
         busqueda: "",
@@ -83,6 +85,7 @@ export const MascotasDisponibles = ({ mascotas }: MascotasDisponiblesProps) => {
                             {mascotasActuales.map((mascota, index: number) => (
                                 <Identificacion
                                     mascota={mascota}
+                                    especie={especie}
                                     botonNaranja={index % 2 === 0 ? false : true}
                                     key={index}
                                 />

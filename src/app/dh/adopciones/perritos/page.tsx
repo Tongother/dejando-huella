@@ -13,7 +13,7 @@ export default async function Perritos() {
     return (
         <>
             <BannerAdopciones tipo="perritos" />
-            <MascotasDisponibles mascotas={mascotas} />
+            <MascotasDisponibles mascotas={mascotas} especie={1} />
             <HogarTemporal />
         </>
     );

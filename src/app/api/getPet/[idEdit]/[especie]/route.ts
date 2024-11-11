@@ -1,6 +1,6 @@
 import connectionDb from "../../../../../../database/config";
 
-export async function GET(req: Request, { params } : any) {
+export async function GET(req: Request, { params } : { params: { idEdit: number, especie: number } }) {
     const { idEdit, especie } = params;
     const sql =  await connectionDb();
 

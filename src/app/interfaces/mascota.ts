@@ -1,4 +1,5 @@
 export type Mascota = {
+    id: number;
     imagen: string;
     nombre: string;
     edad: string;
