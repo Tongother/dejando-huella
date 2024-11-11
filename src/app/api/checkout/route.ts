@@ -1,43 +1,48 @@
-import { NextApiRequest, NextApiResponse } from "next";
-import mercadopago from "mercadopago";
-import { CreatePreferencePayload } from "mercadopago/models/preferences/create-payload.model";
+import { MercadoPagoConfig, Preference } from 'mercadopago';
+import { NextResponse } from "next/server";
 
-mercadopago.configurations.setAccessToken(process.env.NEXT_ACCESS_TOKEN as string);
+const client = new MercadoPagoConfig({ accessToken: process.env.NEXT_ACCESS_TOKEN as string });
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-    if (req.method !== "POST") {
-        return res.status(405).json({ error: "Method Not Allowed" });
-    }
+export async function POST(req: Request ) {
 
-    const { title, quantity, unit_price } = req.body;
-
-    if (!title || !unit_price || !quantity) {
-        return res.status(400).json({ error: "Invalid donation data" });
-    }
-
-    const URL = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+    const { title, quantity, unit_price } = await req.json();
 
     try {
-        const preference: CreatePreferencePayload = {
-            items: [
-                {
-                    title,
-                    unit_price,
-                    quantity,
-                },
-            ],
-            auto_return: "approved",
-            back_urls: {
-                success: `${URL}/success`,
-                failure: `${URL}/failure`,
-            },
-            notification_url: `${URL}/api/notify`,
-        };
+        const preference = new Preference(client);
 
-        const response = await mercadopago.preferences.create(preference);
-        res.status(200).json({ id: response.body.id });
+        const body = {
+            items: [
+            {
+                title: title,
+                quantity: quantity,
+                unit_price: unit_price,
+                currency_id: 'MXN',
+                id: '1',
+            }
+            ],
+            back_urls: {
+                success: 'https://example.com/success',
+                failure: 'https://example.com/failure',
+                pending: 'https://example.com/pending',
+            },
+            auto_return: 'approved',
+        }
+
+        const result = await preference.create({ body });
+
+        return NextResponse.json({ 
+            status: 200,
+            id: result.id 
+        },{
+            status: 200,
+        });
+
     } catch (error) {
         console.error("Error creating Mercado Pago preference:", error);
-        res.status(500).json({ error: "Failed to create preference" });
+        return NextResponse.json({ 
+            status: 500,
+        },{
+            status: 500,
+        });
     }
 }

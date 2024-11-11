@@ -10,15 +10,20 @@ interface MercadoPagoButtonProps {
 export const MercadoPagoButton: React.FC<MercadoPagoButtonProps> = ({ amount }) => {
   const [preferenceId, setPreferenceId] = useState<string | null>(null);
 
-  initMercadoPago(process.env.NEXT_PUBLIC_KEY as string);
+  initMercadoPago(process.env.NEXT_PUBLIC_KEY as string,
+    {
+      locale: "es-MX"
+    }
+  );
 
   const createPreference = async () => {
     try {
-      const response = await axios.post('https://localhost:3000/create_preferences', {
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/api/checkout`, {
         title: 'Donación',
         quantity: 1,
         unit_price: amount,
       });
+      
       const { id } = response.data;
       return id;
     } catch (error) {
