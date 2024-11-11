@@ -9,10 +9,11 @@ import { motion } from "framer-motion";
 
 interface Banner_preguntaProps {
     pregunta: string,
-    respuesta: string
+    respuesta?: string,
+    imgURL?: string,
 }
 
-const Banner_pregunta = ({pregunta, respuesta}:Banner_preguntaProps) => {
+const Banner_pregunta = ({pregunta, respuesta, imgURL}:Banner_preguntaProps) => {
     const [mostrarRespuesta, setMostrarRespuesta] = useState(false);
 
     return(
@@ -26,12 +27,17 @@ const Banner_pregunta = ({pregunta, respuesta}:Banner_preguntaProps) => {
             <motion.div 
             variants={{
                 hidden: {height: 0, opacity: 0},
-                visible: {height: "auto", marginTop: "15px",opacity: 1},
+                visible: {height: "auto", marginTop: "15px", opacity: 1},
             }}
             initial="hidden"
             animate={mostrarRespuesta ? "visible" : "hidden"}
             transition={{duration: 0.3, ease: "easeInOut"}}>
-                <p className="text-lg md:text-xl">{respuesta}</p>
+                <p className="text-lg md:text-xl">{ respuesta ? respuesta : "" }</p>
+                { imgURL && (
+                    <div className="w-full flex justify-center">
+                        <Image src={imgURL} alt="Imagen de referencia" quality={100} width={500} height={500} priority/>
+                    </div>
+                )}
             </motion.div>
         </div>
     )
