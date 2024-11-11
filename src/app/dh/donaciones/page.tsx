@@ -5,7 +5,7 @@ import Image from "next/image";
 import { MercadoPagoButton } from "@/components/MercadoPagoButton/MercadoPagoButton";
 
 export default function DonationPage() {
-  const amount = 100; // Define el monto de la donación
+  const PrecioDonaciones = [50, 100, 200, 500];
 
   return (
     <section>
@@ -30,7 +30,11 @@ export default function DonationPage() {
             <h1 className="font-itim text-center font-medium text-2xl text-[#F6A700] lg:text-4xl lg:mb-5">
               Conviértete en un héroe
             </h1>
-            <MercadoPagoButton amount={amount} />
+            <div className="flex flex-wrap gap-4 justify-center">
+              {PrecioDonaciones.map((amount) => (
+                <MercadoPagoButton key={amount} amount={amount} />
+              ))}
+            </div>
             <div className="mt-6 flex rounded-t-2xl gap-5 pr-3 lg:gap-5 justify-center lg:justify-end items-center">
               <div className="relative w-[60px] h-[16px] lg:w-[150px] lg:h-[40px]">
                 <Image src="/Donativos/paypal.png" alt="Logo Paypal" fill />
