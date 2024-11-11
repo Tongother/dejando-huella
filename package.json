@@ -11,6 +11,8 @@
   "dependencies": {
     "@mercadopago/sdk-react": "^0.0.19",
     "@neondatabase/serverless": "^0.10.1",
+    "@react-email/components": "^0.0.28",
+    "@react-email/render": "^1.0.2",
     "@types/mercadopago": "^1.5.11",
     "axios": "^1.7.7",
     "bcrypt-ts": "^5.0.2",
