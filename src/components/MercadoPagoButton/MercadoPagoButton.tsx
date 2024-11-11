@@ -37,7 +37,7 @@ export const MercadoPagoButton: React.FC<MercadoPagoButtonProps> = ({ amount }) 
   };
 
   return (
-    <div>
+    <div className="relative flex flex-col items-center">
       <button
         onClick={handleBuy}
         className="shadow flex items-center rounded-3xl p-2 bg-[#F6F6FF] lg:basis-[170px] lg:grow lg:h-[170px] lg:flex-col lg:justify-center lg:transition-transform lg:duration-300 lg:ease-in-out lg:hover:scale-105 lg:hover:bg-[#dbdbe2]"
@@ -53,9 +53,13 @@ export const MercadoPagoButton: React.FC<MercadoPagoButtonProps> = ({ amount }) 
         </div>
       </button>
       {preferenceId && (
-        <Wallet initialization={{ preferenceId }} />
+        <div className="absolute bottom-[-130px] w-full flex justify-center">
+          <Wallet initialization={{ preferenceId }} />
+        </div>
       )}
     </div>
   );
+  
+  
 };
 
