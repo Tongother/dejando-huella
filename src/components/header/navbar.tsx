@@ -62,22 +62,22 @@ export const Navbar = () => {
             >
                 <ul className="flex flex-col items-center justify-center h-full space-y-4">
                     <li>
-                        <Link href="/dh/historias_exito">Historias de éxito</Link>
+                        <Link href="/dh/historias_exito" onClick={() => {setMenuOpen(false)}}>Historias de éxito</Link>
                     </li>
                     <li>
-                        <Link href="/dh/donaciones">Donaciones</Link>
+                        <Link href="/dh/donaciones" onClick={() => {setMenuOpen(false)}}>Donaciones</Link>
                     </li>
                     <li>
-                        <Link href="/dh/adopciones">Adopciones</Link>
+                        <Link href="/dh/adopciones" onClick={() => {setMenuOpen(false)}}>Adopciones</Link>
                     </li>
                     <li>
-                        <Link href="/dh/eventos">Eventos próximos</Link>
+                        <Link href="/dh/eventos" onClick={() => {setMenuOpen(false)}}>Eventos próximos</Link>
                     </li>
                     <li>
-                        <Link href="/dh/nosotros">Nosotros</Link>
+                        <Link href="/dh/nosotros" onClick={() => {setMenuOpen(false)}}>Nosotros</Link>
                     </li>
                     <li>
-                        <Link href="/dh/contacto">Contacto</Link>
+                        <Link href="/dh/contacto" onClick={() => {setMenuOpen(false)}}>Contacto</Link>
                     </li>
                 </ul>
             </motion.div>

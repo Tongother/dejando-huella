@@ -14,7 +14,7 @@ type Mascota = {
     edad: string;
     sexo: string;
     personalidad: string;
-    tamaño: string;
+    tamanio?: string;
 };
 
 interface MascotasDisponiblesProps {
@@ -27,7 +27,7 @@ export const MascotasDisponibles = ({ mascotas, especie }: MascotasDisponiblesPr
     const [filtros, setFiltros] = useState({
         busqueda: "",
         sexo: "",
-        tamaño: "",
+        tamanio: "",
         personalidad: "",
         edad: 0,
     });
@@ -41,13 +41,13 @@ export const MascotasDisponibles = ({ mascotas, especie }: MascotasDisponiblesPr
         const coincideBusqueda = filtros.busqueda
             ? mascota.nombre.toLowerCase().includes(filtros.busqueda.toLowerCase()) ||
             mascota.personalidad.toLowerCase().includes(filtros.busqueda.toLowerCase()) ||
-            mascota.tamaño.toLowerCase().includes(filtros.busqueda.toLowerCase()) ||
+            mascota.tamanio?.toLowerCase().includes(filtros.busqueda.toLowerCase()) ||
             mascota.sexo.toLowerCase().includes(filtros.busqueda.toLowerCase()) ||
             mascota.edad.toLowerCase().includes(filtros.busqueda.toLowerCase())
             : true;
         const coincideSexo = filtros.sexo ? mascota.sexo === filtros.sexo : true;
 
-        const coincideTamaño = filtros.tamaño ? mascota.tamaño === filtros.tamaño : true;
+        const coincideTamaño = filtros.tamanio ? mascota.tamanio === filtros.tamanio : true;
         const coincidePersonalidad = filtros.personalidad ? mascota.personalidad === filtros.personalidad : true;
         const coincideEdad = filtros.edad > 0 ? parseInt(mascota.edad) <= filtros.edad : true;
         return coincideBusqueda && coincideSexo && coincideTamaño && coincidePersonalidad && coincideEdad;

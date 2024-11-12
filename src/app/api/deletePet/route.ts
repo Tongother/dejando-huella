@@ -26,15 +26,15 @@ export async function DELETE(req: Request, { params } : any) {
     //validar y retornar el registro en la base de datos
     try{
         let result;
-        if(especie == 1){
+        if(especie == 'perros'){
             //Consulta de datos en la tabla perros
             result = await sql`DELETE FROM perros WHERE id_perro = ${deleteId}`;
-        }else{
+        }else if(especie == 'gatos'){
             //Consulta de datos en la tabla gatos
             result = await sql`DELETE FROM gatos WHERE id_gato = ${deleteId}`;
         }
         
-        if(result.count!=0){
+        if(result?.count!=0){
             return new Response(JSON.stringify({ message: 'Registro eliminado con éxito', result, status: 200 }), {
                 status: 200,
                 headers: { 'Content-Type': 'application/json' }

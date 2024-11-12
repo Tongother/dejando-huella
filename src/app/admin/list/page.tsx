@@ -2,7 +2,14 @@
 import Link from "next/link";
 export default function list() {
     return (
-        <div className="m-auto p-5 flex flex-col gap-3 rounded-2xl shadow-2xl">
+        // <div className="w-full h-screen grid grid-cols-2 items-center justify-center p-20">
+        //     <div className="h-[250px] w-[300px] bg-white rounded-md sombra">
+
+        //     </div>
+            
+        // </div>
+
+        <div className="w-screen h-screen p-5 flex flex-col justify-center items-center gap-3 rounded-2xl shadow-2xl">
             <Link href='/admin/list/perritos'>
                 <button className="flex items-center justify-center w-auto h-auto bg-blue-600 p-2 text-white rounded-md font-itim">
                     <svg className="h-5 w-5 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">

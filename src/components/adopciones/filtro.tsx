@@ -7,7 +7,7 @@ interface Filtros {
     edad: number,
     busqueda: string,
     sexo: string,
-    tamaño: string,
+    tamanio: string,
     personalidad: string,
   }
   
@@ -17,21 +17,20 @@ interface FiltroProps {
 }
 
 type personalidad = {
+    id_personalidad: number;
     personalidad: string;
 };
 
 export const Filtro = ({ setFiltros }: FiltroProps) => {
 
     const [sexo, setSexo] = useState("");
-    const [tamaño, setTamaño] = useState("");
+    const [tamanio, setTamanio] = useState("");
     const [busqueda, setBusqueda] = useState("");
     const [personalidad, setPersonalidad] = useState("");
     const [edadSlider, setEdadSlider] = useState(0);
     const sliderSpanRef = useRef<HTMLSpanElement>(null);
     const [position, setPosition] = useState(0);
     const [personalidades, setPersonalidades] = useState<personalidad[]>([]);
-
-    console.log(personalidad, sexo, tamaño, busqueda, edadSlider);
 
     useEffect(() => {
         const getPersonalidades = async () => {
@@ -89,10 +88,10 @@ export const Filtro = ({ setFiltros }: FiltroProps) => {
         setFiltros((prev: Filtros) => ({ ...prev, sexo: newSexo }));
     };
 
-    const handleTamaño = (e: React.ChangeEvent<HTMLSelectElement>) => {
-        const newTamaño = e.target.value;
-        setTamaño(newTamaño);
-        setFiltros((prev: Filtros) => ({ ...prev, tamaño: newTamaño }));
+    const handleTamanio = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        const newTamanio = e.target.value;
+        setTamanio(newTamanio);
+        setFiltros((prev: Filtros) => ({ ...prev, tamanio: newTamanio }));
     };
 
     const handlePersonalidad = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -139,7 +138,7 @@ export const Filtro = ({ setFiltros }: FiltroProps) => {
                 </div>
                 <div className="relative flex items-center m-0">
                     <select
-                        onChange={handleTamaño}
+                        onChange={handleTamanio}
                         className="px-10 py-1 rounded-2xl font-ini border-[1px] border-[#F6A700] focus:outline-none focus:ring-[2px] focus:ring-[#F6A700] lg:py-2 lg:px-10 lg:shadow-inner lg:min-w-[300px] max-sm:w-full"
                     >
                         <option value="">Tamaño</option>
@@ -159,7 +158,7 @@ export const Filtro = ({ setFiltros }: FiltroProps) => {
                     >
                         <option value="">Personalidad</option>
                         {personalidades.map((personalidad) => (
-                            <option key={personalidad.personalidad} value={personalidad.personalidad}>
+                            <option key={personalidad.id_personalidad} value={personalidad.personalidad}>
                                 {personalidad.personalidad}
                             </option>
                         ))}
