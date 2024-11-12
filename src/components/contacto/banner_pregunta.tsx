@@ -19,7 +19,7 @@ const Banner_pregunta = ({pregunta, respuesta, imgURL}:Banner_preguntaProps) => 
     return(
         <div className="w-[90%] bg-[#EFEFEF] p-6 rounded-sm cursor-pointer" onClick={() => setMostrarRespuesta(prev => !prev)}>
             <div className="relative flex justify-start items-center">
-                <h3 className="text-xl md:text-2xl">{pregunta}</h3>
+                <h3 className="max-w-[90%] text-xl md:text-2xl">{pregunta}</h3>
                 <div className="absolute top-1/2 -translate-y-1/2 right-2 w-[16px] h-[16px]">
                     <Image src="/contacto/mas.png" alt="Más información" quality={100} fill priority/>
                 </div>

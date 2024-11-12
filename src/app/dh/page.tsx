@@ -9,9 +9,9 @@ export default function Home() {
   return (
     <>
       <div className="fixed w-full h-full -z-10">
-        <Image src={"/fondo_fijo.jpg"} fill alt="Un perro bien sarnoso" className="object-cover object-[70%] lg:object-[50%]"></Image>
+        <Image src={"/fondo_fijo.jpg"} fill alt="Un gatito bien bonito" className="object-cover object-[70%] lg:object-[50%]"></Image>
       </div>
-      <Carrusel/>
+      <Carrusel activeIndex={0} />
       <Banner/>
       <Info/>
       <Stats/>

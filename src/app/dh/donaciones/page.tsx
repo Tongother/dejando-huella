@@ -9,7 +9,7 @@ export default function DonationPage() {
 
   return (
     <section>
-      <Carrusel active={1}/>
+      <Carrusel activeIndex={1} />
       <article className="w-full p-5 flex flex-col items-center lg:py-9 lg:px-5 lg:bg-[#F6F6FF]">
         <h1 className="font-ramm text-[#4C62D8] text-2xl lg:text-6xl">Donaciones</h1>
         <div className="w-full flex flex-col items-center lg:flex-row lg:gap-10 lg:px-[150px] lg:py-10">
