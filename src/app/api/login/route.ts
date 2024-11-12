@@ -16,7 +16,6 @@ export async function GET() {
 export async function POST(req: Request) {
 	const { username, password }: { username: string; password: string } = await req.json();
 	//let token = '';
-	console.log("first", username, password);
 	const sql =  await connectionDb();
 	//Conectar a la base de datos
 	try {

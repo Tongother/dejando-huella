@@ -25,7 +25,7 @@ const NavBarAdmin = () => {
 
     return(
         <>
-            <motion.nav className="hidden md:flex md:flex-col md:h-screen sombra top-0 right-0 sticky bg-[#1e3b76] text-white font-itim"
+            <motion.nav className="hidden md:flex md:flex-col md:h-screen sombra top-0 right-0 sticky bg-[#6b74c6] text-white font-itim rounded-r-lg"
             initial={{
                 width: 70,
             }}
@@ -35,7 +35,7 @@ const NavBarAdmin = () => {
                     height: "auto",
                 },
                 cerrado: {
-                    width: 70,
+                    width: 80,
                 }
             }} animate={open ? "abierto" : hover ? "abierto" : "cerrado"} onMouseEnter={handleDown} onMouseLeave={handleUp}>
                 <div className={`w-full flex justify-center items-center `}>

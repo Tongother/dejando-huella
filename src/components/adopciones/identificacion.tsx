@@ -7,7 +7,7 @@ type IdentificacionProps = {
         edad: string;
         sexo: string;
         personalidad: string;
-        tamaño: string;
+        tamanio?: string;
     },
     botonNaranja: boolean; 
 };
@@ -50,7 +50,7 @@ export const Identificacion = ({ mascota, botonNaranja = false }: Identificacion
                     <br />
                     <span className="text-[#4c62d9]">TAMAÑO</span>
                     <br />
-                    {mascota.tamaño}
+                    {mascota.tamanio}
                 </p>
             </div>
 

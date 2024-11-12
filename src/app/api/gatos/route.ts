@@ -1,10 +1,10 @@
 import { NextResponse } from 'next/server';
-import connectionDb from '../../../../../database/config';
+import connectionDb from '../../../../database/config';
 
 export async function GET() {
     const sql = await connectionDb();
     try {
-        const result = await sql`SELECT * FROM personalidades`;
+        const result = await sql`SELECT * FROM vista_gatos`;
         if (result) {
             return NextResponse.json(result);
         }
