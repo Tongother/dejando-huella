@@ -5,5 +5,5 @@ export type Mascota = {
     edad: string;
     sexo: string;
     personalidad: string;
-    tamanio: string;
+    tamanio?: string;
 };

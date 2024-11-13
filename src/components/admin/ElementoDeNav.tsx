@@ -26,7 +26,7 @@ const ElementoDeNav = ({ icono, texto, ruta, open, hover }: ElementoDeNavProps) 
     }
 
     return(
-        <div className="w-[90%] shadow-lg rounded-md ease-out duration-300 hover:translate-x-4" onMouseEnter={handleColorElemento} onMouseLeave={handleColorElementoOut}>
+        <div className="w-full shadow-lg rounded-md ease-out duration-300 hover:translate-x-4" onMouseEnter={handleColorElemento} onMouseLeave={handleColorElementoOut}>
             <Link href={ruta} className="flex h-full">
                 <div className={`w-4 h-full ${mouseHoverElement ? "bg-[#FFB602]" : "bg-[#000000]"} rounded-sm`}></div>
                 <div className={`flex items-center p-2 flex-1`}>

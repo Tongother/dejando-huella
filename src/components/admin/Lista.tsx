@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { useEffect } from 'react';
+import Image from 'next/image';
 
 interface petDataType {
     id: number,
@@ -62,7 +63,7 @@ export const Lista = ({ pets, especie }: ListaProps) => {
     }, [deleteId]);
 
     return (
-        <div className="bg-gray-100 relative shadow-md sm:rounded-lg overflow-hidden pt-5 flex flex-col m-auto">
+        <div className="bg-gray-100 relative shadow-md sm:rounded-lg overflow-hidden pt-5 flex flex-col m-auto w-full">
             <div className="flex items-center justify-end px-6 mb-5 gap-4">
                 <Link href={`/admin/formPets/${especie}/0`}>
                     <button className="flex items-center justify-center w-auto h-auto bg-blue-600 p-2 text-white rounded-md font-itim">
@@ -87,7 +88,9 @@ export const Lista = ({ pets, especie }: ListaProps) => {
                                 : null
                             }
                             <th scope="col" className="px-6 py-3">Adoptado</th>
+                            <th scope='col' className='px-6 py-3'>Imagen</th>
                             <th scope="col" className="px-6 py-3">Acciones</th>
+                            
                         </tr>
                     </thead>
                     {mascotas.length > 0 ? (
@@ -115,6 +118,9 @@ export const Lista = ({ pets, especie }: ListaProps) => {
                                     }
                                     <td className="px-6 py-4 text-gray-700">
                                         {mascota.adoptado ? "Si" : "No"}
+                                    </td>
+                                    <td className="py-4 text-gray-700">
+                                        <Image src={mascota.imagen as string} alt={mascota.nombre as string} width={100} height={100} className='rounded-lg' />
                                     </td>
                                     <td className="px-6 py-4 text-gray-700">
                                         <div className="flex items-center gap-1">
