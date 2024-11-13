@@ -4,11 +4,15 @@ const layout = ({ children }: {
     children: React.ReactNode
 }) => {
     return (
-        <div className="flex bg-slate-100 w-full h-full">
+        <div className="flex h-auto bg-gray-100">
             <NavBarAdmin />
-            {children}
+
+            <section className="w-full h-screen overflow-y-scroll p-12">
+                {children}
+            </section>
         </div>
     )
 }
 
 export default layout;
+
