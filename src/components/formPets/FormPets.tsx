@@ -1,5 +1,5 @@
 'use client';
-import React, { FormEvent, useState, ChangeEvent, useEffect, use } from "react";
+import React, { FormEvent, useState, ChangeEvent, useEffect } from "react";
 import Link from "next/link";
 import axios from "axios";
 
@@ -42,7 +42,7 @@ export default function FormPets({ idEdit, especie, initialData }: FormPetsProps
 	});
 
 	const [personalidades, setPersonalidades] = useState<Personalidad[]>([]);
-	const [isEditing, setIsEditing] = useState<boolean>(values.id !== 0);
+	const [isEditing] = useState<boolean>(values.id !== 0);
 	const [editImage, setEditImage] = useState(true);
 	const [file, setFile] = useState<File | string>("");
 
@@ -158,7 +158,11 @@ export default function FormPets({ idEdit, especie, initialData }: FormPetsProps
 		const petData = { ...values, imagen: imageUrl };
 	
 		// Ejecuta la inserción o edición con petData
-		isEditing ? editPet(petData) : insertPet(petData);
+		if (isEditing) {
+			editPet(petData);
+		} else {
+			insertPet(petData);
+		}
 	};
 	
 

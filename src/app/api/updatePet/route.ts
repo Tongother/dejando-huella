@@ -19,7 +19,7 @@ export async function PUT(req: Request) {
         const sql = await connectionDb();
         // Actualizar registro
         if (especie === 'perros') {
-            const result = await sql`
+            await sql`
                 UPDATE perros 
                 SET nombre = ${nombre}, 
                     edad = ${edad}, 
@@ -31,7 +31,7 @@ export async function PUT(req: Request) {
                 WHERE id_perro = ${id}`
         }
         else if (especie === 'gatos') {
-            const result = await sql`
+            await sql`
                 UPDATE gatos 
                 SET nombre = ${nombre}, 
                     edad = ${edad}, 

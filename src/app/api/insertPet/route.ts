@@ -9,13 +9,13 @@ export async function POST(req: Request) {
     try {
         if (especie === "perros") {
             // Inserción de datos en la tabla perros
-            const result = await sql`
+            await sql`
                 INSERT INTO perros (nombre, edad, id_sexo, id_personalidad, id_tamano, adoptado, imagen) 
                 VALUES (${nombre}, ${edad}, ${id_sexo}, ${id_personalidad}, ${id_tamano}, ${adoptado}, ${imagen});
             `;
         } else if (especie === "gatos") {
             // Inserción de datos en la tabla gatos
-            const result = await sql`
+            await sql`
                 INSERT INTO gatos (nombre, edad, id_sexo, id_personalidad, adoptado, imagen) 
                 VALUES (${nombre}, ${edad}, ${id_sexo}, ${id_personalidad}, ${adoptado}, ${imagen});
             `;

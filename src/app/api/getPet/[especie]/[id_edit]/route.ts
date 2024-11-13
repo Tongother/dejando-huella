@@ -1,7 +1,7 @@
 import connectionDb from "../../../../../../database/config";
 
-export async function GET(req: Request, { params } : any) {
-    const { especie, id_edit } = params;
+export async function GET(req: Request) {
+    const { especie, id_edit } = await req.json();
     
     const sql =  await connectionDb();
 
