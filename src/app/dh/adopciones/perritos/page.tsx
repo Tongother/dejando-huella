@@ -3,6 +3,16 @@ import HogarTemporal from "@/components/adopciones/hogar_temporal";
 import MascotasDisponibles from "@/components/adopciones/mascotas_disponibles";
 import { Mascota } from "@/app/interfaces/mascota";
 import { Suspense } from "react";
+import Image from "next/image";
+
+const SkeletonLoader = () => {
+    return (
+        <div className="w-full h-screen md:h-[90vh] flex justify-center items-center">
+            <Image src="/gifts/perrito.gif" width={50} height={50} alt="Cargando..." quality={100} />
+        </div>
+    );
+}
+  
 
 export default async function Perritos() {
 
@@ -13,7 +23,7 @@ export default async function Perritos() {
 
     return (
         <>
-            <Suspense fallback={<h1 className="bg-black w-screen h-screen">Cargando...</h1>} >
+            <Suspense fallback={<SkeletonLoader />} >
                 <BannerAdopciones tipo="perritos" />
                 <MascotasDisponibles mascotas={mascotas} especie={1} />
                 <HogarTemporal />
