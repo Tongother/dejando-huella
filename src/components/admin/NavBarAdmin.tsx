@@ -24,7 +24,7 @@ const NavBarAdmin = () => {
 
     return (
         <motion.nav
-            className="hidden md:flex md:flex-col md:h-screen sombra top-0 sticky bg-[#6b74c6] text-white font-itim rounded-r-lg"
+            className="hidden md:flex md:flex-col md:h-screen sombra top-0 sticky bg-[#6b74c6] text-white font-itim"
             initial={{
                 width: 70,
             }}
@@ -72,7 +72,6 @@ const NavBarAdmin = () => {
                     </h1>
                 </motion.div>
             </div>
-            <hr className="border-[#192a52]" />
             <div className="flex flex-col items-center mt-4">
                 <Image src="/admin/avatar.png" alt="Avatar" width={80} height={80} />
                 <motion.div
@@ -149,7 +148,6 @@ const NavBarAdmin = () => {
                     </ul>
                 </motion.div>
             </div>
-            <hr className="border-[#192a52]" />
             <div className="flex-1 flex flex-col gap-4 mt-6 overflow-y-auto cajaBotones">
                 <ElementoDeNav texto="Inicio" ruta="/admin" icono="/admin/hogar.png" open={open} hover={hover} />
                 <ElementoDeNav texto="Lista de animalitos" ruta="/admin/list" icono="/admin/dog.svg" open={open} hover={hover} />

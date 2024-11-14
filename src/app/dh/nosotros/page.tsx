@@ -46,7 +46,7 @@ const PaginaNosotros = () => {
                             </div>
                             <div className="w-60 h-60 relative"> 
                                 <Image 
-                                    src="/Perrito2.png"
+                                    src="/perrito2.png"
                                     alt="Perrito"
                                     fill
                                     className="object-cover rounded-lg"
@@ -65,7 +65,7 @@ const PaginaNosotros = () => {
                             </div>
                             <div className="w-60 h-60 relative flex justify-center items-center">
                                 <Image 
-                                    src="/Gatito1.png" 
+                                    src="/gatito1.png" 
                                     alt="Gatito"
                                     fill
                                     className="object-cover rounded-lg" 
