@@ -21,9 +21,9 @@ export const MercadoPagoButton: React.FC<MercadoPagoButtonProps> = ({ amount }) 
         quantity: 1,
         unit_price: amount,
         regreso: {
-          success: "http://localhost:3000/dh/donaciones",
-          failure: "http://localhost:3000/dh/donaciones",
-          pending: "http://localhost:3000/dh/donaciones"
+          success: "https://dejando-huella.vercel.app/dh/donaciones",
+          failure: "https://dejando-huella.vercel.app/dh/donaciones",
+          pending: "https://dejando-huella.vercel.app/dh/donaciones"
         },
         autoReturn: "approved"
       });
