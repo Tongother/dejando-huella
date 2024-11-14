@@ -23,7 +23,7 @@ interface ListaProps {
 //TODO: Obtener el id para eliminar el registro
 export const Lista = ({ pets, especie }: ListaProps) => {
     const [montado, setMontado] = useState<boolean>(false);
-    const [mascotas, setMascotas] = useState<Array<petDataType>>(pets);
+    const [mascotas] = useState<Array<petDataType>>(pets);
     const [confirmDelete, setConfirmDelete] = useState<boolean>(false);
     const [deleteId, setDeleteId] = useState<number>(0);
     const [alert, setAlert] = useState<string>('');

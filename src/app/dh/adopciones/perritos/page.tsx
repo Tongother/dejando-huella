@@ -2,6 +2,7 @@ import BannerAdopciones from "@/components/adopciones/banner_adopciones";
 import HogarTemporal from "@/components/adopciones/hogar_temporal";
 import MascotasDisponibles from "@/components/adopciones/mascotas_disponibles";
 import { Mascota } from "@/app/interfaces/mascota";
+import { Suspense } from "react";
 
 export default async function Perritos() {
 
@@ -12,9 +13,11 @@ export default async function Perritos() {
 
     return (
         <>
-            <BannerAdopciones tipo="perritos" />
-            <MascotasDisponibles mascotas={mascotas} especie={1} />
-            <HogarTemporal />
+            <Suspense fallback={<h1 className="bg-black w-screen h-screen">Cargando...</h1>} >
+                <BannerAdopciones tipo="perritos" />
+                <MascotasDisponibles mascotas={mascotas} especie={1} />
+                <HogarTemporal />
+            </Suspense>
         </>
     );
 }

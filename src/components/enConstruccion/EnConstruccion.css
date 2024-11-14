@@ -1,0 +1,9 @@
+.forma {
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 76% 24% 30% 69% / 73% 46% 54% 44%;
+    width: 478px;
+    height: 390px;
+    background: #d2def3;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }

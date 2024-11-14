@@ -26,8 +26,8 @@ export default async function FormPetsPage({ params }: { params: { especie: stri
       if (res.status === 200) {
         mascotaData = res.data.result[0];
       }
-    } catch (error) {
-      console.error("Error al obtener datos de la mascota");
+    } catch (e:unknown) {
+      console.error("Error al obtener datos de la mascota: " + e);
     }
   }
 

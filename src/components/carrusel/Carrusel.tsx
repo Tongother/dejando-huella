@@ -25,8 +25,8 @@ interface objeto {
 const Carrusel = ({ activeIndex }:CarruselProps) => {
 
   let objetoSimulaBD: objeto[] = [
-    {texto: "Adopta y ayuda a seguir <br className='hidden lg:block'/><span className='text-[#FFB602]'>dejando huella</span> en la<br className='hidden lg:block'/> vida de un perrito sin <br className='hidden lg:block' />  hogar.", urlBtn1:"/dh/adopciones" , urlBtn2:"/dh/contacto" , textoBtn1:"Adopta" , textoBtn2:"Contactanos" , images: "/breadcrumb_1.png", fondo: false},
-    {texto: "", urlBtn1:"" , urlBtn2:"" , textoBtn1:"" , textoBtn2:"" , images: "/banner.png", fondo: false},
+    {texto: "Adopta y ayuda a seguir <br className='hidden lg:block'/><span style='color:#FFB602'>dejando huella</span> en la<br className='hidden lg:block'/> vida de un perrito sin <br className='hidden lg:block' />  hogar.", urlBtn1:"/dh/adopciones" , urlBtn2:"/dh/contacto" , textoBtn1:"Adopta" , textoBtn2:"Contactanos" , images: "/breadcrumb_1.png", fondo: false, color: ""},
+    {texto: "", urlBtn1:"" , urlBtn2:"" , textoBtn1:"" , textoBtn2:"" , images: "/banner.png", fondo: false, color: ""},
     {texto: "¡Estamos aquí para ayudarte a encontrar tu compañero de vida! <br/>Si tienes alguna pregunta o quieres saber más sobre nuestro trabajo, no dudes en escribirnos.", urlBtn1:"/dh/adopciones" , urlBtn2:"/dh/donaciones" , textoBtn1:"Adoptar" , textoBtn2:"Donar" , images: "/contacto/altar_perritos.jpeg", fondo: true, color: "text-black"},
   ]
 
@@ -35,8 +35,6 @@ const Carrusel = ({ activeIndex }:CarruselProps) => {
     ...objetoSimulaBD.slice(0, activeIndex),
     ...objetoSimulaBD.slice(activeIndex + 1),
   ];
-
-  console.log(objetoSimulaBD);
 
   const [tiempoScrollTouch, setTiempoScrollTouch] = useState<NodeJS.Timeout>();
   const intervalRef = useRef<NodeJS.Timeout>();
@@ -201,17 +199,18 @@ const Carrusel = ({ activeIndex }:CarruselProps) => {
         onTouchEnd={handleTouchEnd}
         onScroll={handleOnScroll}
       >
-        {objetoSimulaBD.map((item, index) => (
+        {objetoSimulaBD.map((item, index) => { return (
           <div key={index} className="relative md:flex md:justify-end min-w-full h-auto overflow-visible">
             {item.texto !== "" && (
               <div className="absolute top-0 w-full h-full bg-black opacity-50 z-10 flex justify-center items-center md:hidden lg:hidden" />
             )}
             {item.fondo && (
-              <div className="hidden absolute right-0 w-full md:w-[50%] h-full md:flex justify-center items-center bg-white md:opacity-50 sombra z-10"/>
+              <div className="hidden absolute right-0 w-full md:w-[45%] h-full md:flex justify-center items-center bg-white md:opacity-50 sombra z-10"/>
             )}
-            <div className="absolute top-0 w-full md:max-w-[20em] lg:max-w-[24em] xl:max-w-[34em] h-full flex flex-col justify-center items-center z-20 md:mr-2 lg:mr-[2.5%] xl:mr-[4%]">
-                <h1 className={`h-auto max-w-[15em] md:max-w-max xl:h-[240px] leading-relaxed text-white md:${item.color} text-center text-xl xl:text-3xl`} dangerouslySetInnerHTML={{__html: item.texto || ""}}>
-                  
+            <div className="absolute top-0 w-full md:max-w-[20em] lg:max-w-[24em] xl:max-w-[34em] h-full flex flex-col justify-center items-center gap-4 z-20 md:mr-2 lg:mr-[2.5%] xl:mr-[4%]">
+                <h1 className={`hidden md:block h-auto max-w-[15em] md:max-w-max leading-relaxed ${item.color || 'text-white'} text-center text-xl xl:text-3xl align-middle`} dangerouslySetInnerHTML={{__html: item.texto || ""}}>
+                </h1>
+                <h1 className={`md:hidden h-auto max-w-[15em] md:max-w-max xl:h-[240px] leading-relaxed text-white text-center text-xl xl:text-3xl`} dangerouslySetInnerHTML={{__html: item.texto || ""}}>
                 </h1>
               <div className="w-full flex justify-center gap-10 mt-2">
                 {item.textoBtn1 !== "" && (
@@ -239,7 +238,7 @@ const Carrusel = ({ activeIndex }:CarruselProps) => {
               priority
             />
           </div>
-        ))}
+        )})}
       </div>
     </section>
   );

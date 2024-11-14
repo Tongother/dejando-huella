@@ -1,13 +1,12 @@
 import connectionDb from "../../../../database/config";
 
-export async function DELETE(req: Request, { params } : any) {
-    let sql;
+export async function DELETE(req: Request) {
     const {deleteId, especie} = await req.json()
-    sql =  await connectionDb();
+    const sql =  await connectionDb();
 
     //Probar conexión a la base de datos
 	try {
-        let result = await sql`SELECT VERSION()`;
+        const result = await sql`SELECT VERSION()`;
         if(result.count == 0){
             sql.end();
             return new Response(JSON.stringify({ message:'Error al conectar a la base de datos', status: 500 }), {
@@ -15,7 +14,7 @@ export async function DELETE(req: Request, { params } : any) {
                 headers: { 'Content-Type': 'application/json' }
             });
         }
-	} catch (error: any) {
+	} catch (error: unknown) {
         sql.end();
 		return new Response(JSON.stringify({ message:'Error al conectar a la base de datos', error, status: 500 }), {
 			status: 500,
@@ -46,7 +45,7 @@ export async function DELETE(req: Request, { params } : any) {
                 headers: { 'Content-Type': 'application/json' }
             });
         }
-    }catch (error: any) {
+    }catch (error: unknown) {
         sql.end();
         return new Response(JSON.stringify({ message: 'Error al buscar el registro', error, status: 500 }), {
             status: 500,

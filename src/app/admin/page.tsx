@@ -1,6 +1,3 @@
-import { cookies } from "next/headers";
-import FormPets from "../../components/formPets/FormPets";
-
 export default async function Admin() {
     // const HandleCookie = await cookies
     // const userCookie = HandleCookie.length();

@@ -41,6 +41,8 @@ export const Filtro = ({ setFiltros }: FiltroProps) => {
             setPersonalidades(data);
         };
 
+        console.log(sexo, tamanio, busqueda, personalidad);
+
         getPersonalidades();
     }, []);
 
