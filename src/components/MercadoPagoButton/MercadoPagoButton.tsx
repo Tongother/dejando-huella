@@ -10,7 +10,7 @@ interface MercadoPagoButtonProps {
 export const MercadoPagoButton: React.FC<MercadoPagoButtonProps> = ({ amount }) => {
   const [preferenceId, setPreferenceId] = useState<string | null>(null);
 
-  initMercadoPago(process.env.NEXT_PUBLIC_KEY as string, {
+  initMercadoPago(process.env.NEXT_MERCADO as string, {
     locale: "es-MX"
   });
 
