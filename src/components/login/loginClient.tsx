@@ -27,7 +27,7 @@ export default function Login() {
 			if(response === 200){
 				setAlert('success');
 				setTimeout(() => {
-					window.location.href = '/admin';
+					window.location.href = '/admin/list';
 				}, 2000);
 			}else{
 				setAlert('failed');
@@ -55,7 +55,7 @@ export default function Login() {
 					<div className='rounded-xl p-2 text-white bg-red-500'>Nombre de usuario o contraseña incorrectos.</div>
 				)}
 				{alert==='success' && (
-					<div className='rounded-xl p-2 text-white bg-green-500'>Sí jaló manito</div>
+					<div className='rounded-xl p-2 text-white bg-green-500'>Logueado con éxito</div>
 				)}
 			</form>
 		</div>

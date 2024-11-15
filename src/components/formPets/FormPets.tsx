@@ -241,6 +241,7 @@ export default function FormPets({ idEdit, especie, initialData }: FormPetsProps
 						}}
 						type="file"
 					/>
+					
 				</div>
 			}
 
