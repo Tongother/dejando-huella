@@ -152,6 +152,7 @@ const NavBarAdmin = () => {
                 <ElementoDeNav texto="Inicio" ruta="/admin" icono="/admin/hogar.png" open={open} hover={hover} />
                 <ElementoDeNav texto="Lista de animalitos" ruta="/admin/list" icono="/admin/dog.svg" open={open} hover={hover} />
             </div>
+            <div className="bg-red-500 p-1.5 mx-auto mb-4"> Cerrar sesión </div>
         </motion.nav>
     );
 };

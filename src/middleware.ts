@@ -7,9 +7,9 @@ export async function middleware(request: NextRequest){
     if (request.nextUrl.pathname.startsWith('/login') && auth){
         return NextResponse.redirect(new URL('/admin', request.url))
     }
-    if (request.nextUrl.pathname.startsWith('/admin') && !auth){
-        return NextResponse.redirect(new URL('/dh/login', request.url))
-    }
+    // if (request.nextUrl.pathname.startsWith('/admin') && !auth){
+    //     return NextResponse.redirect(new URL('/dh/login', request.url))
+    // }
     if(request.nextUrl.pathname === '/admin/formPets'){
         return NextResponse.redirect(new URL('/admin/formPets/0/0', request.url))
     }
