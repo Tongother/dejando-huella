@@ -1,20 +1,27 @@
 import connectionDb from "../../../../../../database/config";
 
-export async function GET(req: Request) {
-    const { especie, id_edit } = await req.json();
-    
-    const sql =  await connectionDb();
+type parametros = {
+    params: {
+        especie: string;
+        id_edit: string;
+    }
+}
 
-    try{
+export async function GET(req: Request, { params }: parametros) {
+    const { especie, id_edit } = params;
+
+    const sql = await connectionDb();
+
+    try {
         let result;
-        if(especie == 'perros'){
+        if (especie == 'perros') {
             //Consulta de datos en la tabla perros
             result = await sql`SELECT * FROM perros WHERE id_perro = ${id_edit}`;
-        }else if (especie == 'gatos'){
+        } else if (especie == 'gatos') {
             //Consulta de datos en la tabla gatos
             result = await sql`SELECT * FROM gatos WHERE id_gato = ${id_edit}`;
         }
-        if(result?.count === 0){
+        if (result?.count === 0) {
             sql.end();
             return new Response(JSON.stringify({ message: 'No se encontró el registro a Editar', status: 404 }), {
                 status: 404,
@@ -26,7 +33,7 @@ export async function GET(req: Request) {
             status: 200,
             headers: { 'Content-Type': 'application/json' }
         });
-    }catch (error: unknown) {
+    } catch (error: unknown) {
         sql.end();
         return new Response(JSON.stringify({ message: 'Error al buscar el registro', error, status: 500 }), {
             status: 500,

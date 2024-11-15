@@ -27,7 +27,7 @@ export default function Login() {
 			if(response === 200){
 				setAlert('success');
 				setTimeout(() => {
-					window.location.href = '/admin';
+					window.location.href = '/admin/list';
 				}, 2000);
 			}else{
 				setAlert('failed');

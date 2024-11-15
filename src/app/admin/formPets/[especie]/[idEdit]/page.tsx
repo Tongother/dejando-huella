@@ -44,7 +44,7 @@ export default async function FormPetsPage({ params }: { params: { especie: stri
   };
 
   return (
-    <div className="w-screen h-auto flex justify-center items-center p-20">
+    <div className="w-full h-auto flex justify-center items-center p-20">
       <FormPets idEdit={id} especie={especie} initialData={initialData} />
     </div>
   );
