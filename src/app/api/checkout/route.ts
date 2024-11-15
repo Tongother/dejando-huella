@@ -21,9 +21,9 @@ export async function POST(req: Request ) {
             }
             ],
             back_urls: {
-                success: 'https://example.com/success',
-                failure: 'https://example.com/failure',
-                pending: 'https://example.com/pending',
+                success: 'https://dejando-huella.vercel.app/dh/donaciones',
+                failure: 'https://dejando-huella.vercel.app/dh/donaciones',
+                pending: 'https://dejando-huella.vercel.app/dh/donaciones',
             },
             auto_return: 'approved',
         }
