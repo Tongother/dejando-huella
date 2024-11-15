@@ -55,7 +55,7 @@ export default function Login() {
 					<div className='rounded-xl p-2 text-white bg-red-500'>Nombre de usuario o contraseña incorrectos.</div>
 				)}
 				{alert==='success' && (
-					<div className='rounded-xl p-2 text-white bg-green-500'>¡Logueado con éxito!</div>
+					<div className='rounded-xl p-2 text-white bg-green-500'>¡Logueado con exito!</div>
 				)}
 			</form>
 		</div>
