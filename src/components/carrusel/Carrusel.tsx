@@ -26,7 +26,7 @@ const Carrusel = ({ activeIndex }:CarruselProps) => {
 
   let objetoSimulaBD: objeto[] = [
     {texto: "Adopta y ayuda a seguir <br className='hidden lg:block'/><span style='color:#FFB602'>dejando huella</span> en la<br className='hidden lg:block'/> vida de un perrito sin <br className='hidden lg:block' />  hogar.", urlBtn1:"/dh/adopciones" , urlBtn2:"/dh/contacto" , textoBtn1:"Adopta" , textoBtn2:"Contactanos" , images: "/breadcrumb_1.png", fondo: false, color: ""},
-    {texto: "", urlBtn1:"" , urlBtn2:"" , textoBtn1:"" , textoBtn2:"" , images: "/banner.png", fondo: false, color: ""},
+    {texto: "", urlBtn1:"" , urlBtn2:"" , textoBtn1:"" , textoBtn2:"" , images: "/Banner.png", fondo: false, color: ""},
     {texto: "¡Estamos aquí para ayudarte a encontrar tu compañero de vida! <br/>Si tienes alguna pregunta o quieres saber más sobre nuestro trabajo, no dudes en escribirnos.", urlBtn1:"/dh/adopciones" , urlBtn2:"/dh/donaciones" , textoBtn1:"Adoptar" , textoBtn2:"Donar" , images: "/contacto/altar_perritos.jpeg", fondo: true, color: "text-black"},
   ]
 
