@@ -9,7 +9,7 @@ import sonsin from "../../../public/perritos/sonsin.png";
 
 type Mascota = {
     id: number;
-    imagen: string;
+    imagen_principal: string;
     nombre: string;
     edad: string;
     sexo: string;

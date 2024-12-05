@@ -6,7 +6,7 @@ import Image from "next/image";
 const SkeletonLoader = () => {
     return (
         <div className="w-full h-screen md:h-[90vh] flex justify-center items-center">
-            <Image src="/gifts/perrito.gif" width={50} height={50} alt="Cargando..." quality={100} />
+            <Image src="/gifs/perrito.gif" width={50} height={50} alt="Cargando..." quality={100} />
         </div>
     );
 }
@@ -28,14 +28,14 @@ export default function List() {
                         imagen: "/admin/listaPerros.png",
                         titulo: "Gestión de Perritos",
                         descripcion: "Agrega perritos, actualiza o elimina información sobre los perritos registrados en la base de datos.",
-                        link: "/admin/list/perritos"
+                        link: "/admin/list/perros"
                     }} />
 
                     <TarjetaComponente componente={{
                         imagen: "/admin/listaPerros.png",
                         titulo: "Gestión de Gatitos",
                         descripcion: "Agrega gatitos, actualiza o elimina información sobre los gatitos registrados en la base de datos.",
-                        link: "/admin/list/gatitos"
+                        link: "/admin/list/gatos"
                     }} />
                 </div>
             </div>

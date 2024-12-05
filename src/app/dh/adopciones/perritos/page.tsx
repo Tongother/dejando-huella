@@ -8,7 +8,7 @@ import Image from "next/image";
 const SkeletonLoader = () => {
     return (
         <div className="w-full h-screen md:h-[90vh] flex justify-center items-center">
-            <Image src="/gifts/perrito.gif" width={50} height={50} alt="Cargando..." quality={100} />
+            <Image src="/gifs/perrito.gif" width={50} height={50} alt="Cargando..." quality={100} />
         </div>
     );
 }

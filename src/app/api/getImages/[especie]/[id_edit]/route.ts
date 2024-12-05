@@ -16,17 +16,10 @@ export async function GET(req: Request, { params }: parametros) {
         let result;
         if (especie == 'perros') {
             //Consulta de datos en la tabla perros
-            result = await sql`SELECT * FROM vista_perros WHERE id = ${id_edit}`;
+            result = await sql`SELECT * FROM imagenes_perros WHERE id_perro = ${id_edit}`;
         } else if (especie == 'gatos') {
             //Consulta de datos en la tabla gatos
-            result = await sql`SELECT * FROM gatos WHERE id_gato = ${id_edit}`;
-        }
-        if (result?.count === 0) {
-            sql.end();
-            return new Response(JSON.stringify({ message: 'No se encontró el registro a Editar', status: 404 }), {
-                status: 404,
-                headers: { 'Content-Type': 'application/json' }
-            });
+            result = await sql`SELECT * FROM imagenes_gatos WHERE id_gato = ${id_edit}`;
         }
         sql.end();
         return new Response(JSON.stringify({ message: 'Registro encontrado', result, status: 200 }), {

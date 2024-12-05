@@ -9,20 +9,20 @@ interface PerfilProps {
         sexo: string,
         personalidad: string,
         tamanio?: string,
-        imagen: string
+        imagen_historia: string
     }
 }
 
 const Perfil = ({datos}:PerfilProps) => {
 
-    const { id, nombre, edad, sexo, personalidad, tamanio, imagen } = datos;
+    const { id, nombre, edad, sexo, personalidad, tamanio, imagen_historia } = datos;
 
     return (
         <FondoIconos>
             <section className="flex flex-col justify-center items-center mt-6">
                 <h1 className="text-2xl py-4 md:text-3xl font-bold">Mi nombre es <span className="text-[#374193] font-bold">{nombre}</span></h1>
                 <article className="relative flex flex-col items-center">
-                    <Image src={imagen} alt="Imagen del adoptado" width={300} height={300} className="absolute z-10" />
+                    <Image src={imagen_historia} alt="Imagen del adoptado" width={300} height={300} className="absolute z-10" />
                     <div className="w-[300px] md:w-[500px] p-6 border border-black bg-white mt-56 rounded-3xl shadow-lg shadow-blue-800 font-bold z-20">
                         <div className="w-full flex justify-center">
                             <div className="w-[60%] -mt-6 p-4 border-x border-b rounded-b-3xl border-black bg-amber-300">

@@ -2,7 +2,7 @@ import connectionDb from "../../../../../../database/config";
 import { NextResponse } from "next/server";
 
 export async function GET(req: Request, { params } : { params: { id: number, especie: number } }) {
-    const { id, especie } = params;
+    const { especie, id } = params;
     const sql =  await connectionDb();
 
     try{

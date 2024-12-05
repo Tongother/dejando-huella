@@ -17,7 +17,7 @@ const PaginaNosotros = () => {
                 <article className="w-full flex flex-col md:flex-row justify-center items-center gap-12 py-10 md:m-0">
                     <div className="w-80 h-80 relative md:block">
                         <Image 
-                            src="/Perrito.png"  
+                            src="perritos/Perrito.png"  
                             alt="Imagen de un perrito"
                             fill 
                             className="rounded-full object-cover" 
@@ -46,7 +46,7 @@ const PaginaNosotros = () => {
                             </div>
                             <div className="w-60 h-60 relative"> 
                                 <Image 
-                                    src="/perrito2.png"
+                                    src="perritos/perrito2.png"
                                     alt="Perrito"
                                     fill
                                     className="object-cover rounded-lg"
@@ -65,7 +65,7 @@ const PaginaNosotros = () => {
                             </div>
                             <div className="w-60 h-60 relative flex justify-center items-center">
                                 <Image 
-                                    src="/gatito1.png" 
+                                    src="gatitos/gatito1.png" 
                                     alt="Gatito"
                                     fill
                                     className="object-cover rounded-lg" 
@@ -84,7 +84,7 @@ const PaginaNosotros = () => {
                             </div>
                             <div className="w-60 h-60 relative"> 
                                 <Image 
-                                    src="/PerroL.png"
+                                    src="perritos/PerroL.png"
                                     alt="Perrito"
                                     fill
                                     className="object-cover rounded-lg"
@@ -107,7 +107,7 @@ const PaginaNosotros = () => {
                     <section className="flex flex-wrap justify-center items-center py-10 gap-6">
                         <div className="card">
                             <div className="face front">
-                                <Image src="/gatinho.jpeg" alt="Benjamin" className="object-cover w-full h-full" width={500} height={500} />
+                                <Image src="gatitos/gatinho.jpeg" alt="Benjamin" className="object-cover w-full h-full" width={500} height={500} />
                                 <h3>Benjamin</h3>
                             </div>
                             <div className="face back">
@@ -119,7 +119,7 @@ const PaginaNosotros = () => {
                         </div>
                         <div className="card">
                             <div className="face front">
-                                <Image src="/Gatoo.jpeg" alt="Laura" className="object-cover w-full h-full" width={500} height={500} />
+                                <Image src="gatitos/Gatoo.jpeg" alt="Laura" className="object-cover w-full h-full" width={500} height={500} />
                                 <h3>Laura</h3>
                             </div>
                             <div className="face back">
@@ -131,7 +131,7 @@ const PaginaNosotros = () => {
                         </div>
                         <div className="card">
                             <div className="face front">
-                                <Image src="/Gat.jpeg" alt="Pablo" className="object-cover w-full h-full" width={500} height={500} />
+                                <Image src="gatitos/Gat.jpeg" alt="Pablo" className="object-cover w-full h-full" width={500} height={500} />
                                 <h3>Pablo</h3>
                             </div>
                             <div className="face back">
@@ -143,7 +143,7 @@ const PaginaNosotros = () => {
                         </div>
                         <div className="card">
                             <div className="face front">
-                                <Image src="/ParGatos.jpeg" alt="Gatitos" className="object-cover w-full h-full" width={500} height={500} />
+                                <Image src="gatitos/ParGatos.jpeg" alt="Gatitos" className="object-cover w-full h-full" width={500} height={500} />
                                 <h3>Gatitos</h3>
                             </div>
                             <div className="face back">

@@ -16,7 +16,7 @@ export async function GET(req: Request, { params }: parametros) {
         let result;
         if (especie == 'perros') {
             //Consulta de datos en la tabla perros
-            result = await sql`SELECT * FROM vista_perros WHERE id = ${id_edit}`;
+            result = await sql`SELECT * FROM perros WHERE id_perro = ${id_edit}`;
         } else if (especie == 'gatos') {
             //Consulta de datos en la tabla gatos
             result = await sql`SELECT * FROM gatos WHERE id_gato = ${id_edit}`;

@@ -1,4 +1,4 @@
-import Lista from "@/components/admin/Lista";
+import Lista from "@/components/admin/adopciones/Lista";
 import Breadcrumb from "@/components/items/breadcrumb";
 import Image from "next/image";
 import { Suspense } from "react";
@@ -6,7 +6,7 @@ import { Suspense } from "react";
 const SkeletonLoader = () => {
     return (
         <div className="w-full h-screen md:h-[90vh] flex justify-center items-center">
-            <Image src="/gifts/perrito.gif" width={50} height={50} alt="Cargando..." quality={100} />
+            <Image src="/gifs/perrito.gif" width={50} height={50} alt="Cargando..." quality={100} />
         </div>
     );
 }
@@ -17,7 +17,7 @@ export default async function list() {
     });
     const mascotas = await res.json();
 
-    const rutas = [{ nombre: "Inicio", link: "/admin" }, { nombre: "Gestión de Mascotas", link: "/admin/list" }, { nombre: "Gatitos", link: "/admin/list/gatitos" }];
+    const rutas = [{ nombre: "Inicio", link: "/admin" }, { nombre: "Gestión de Mascotas", link: "/admin/list" }, { nombre: "gatos", link: "/admin/list/gatos" }];
 
     return (
         <Suspense fallback={<SkeletonLoader />}>
